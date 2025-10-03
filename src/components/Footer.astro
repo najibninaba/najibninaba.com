@@ -1,0 +1,57 @@
+---
+interface Props {
+  updated?: string;
+}
+const { updated } = Astro.props as Props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer reveal" aria-label="Site footer">
+  <div class="inner">
+    <small class="meta">
+      {updated && (
+        <>
+          <span class="updated">
+            Last updated: <time datetime={updated}>{updated}</time>
+          </span>
+          <span class="sep" aria-hidden="true"> · </span>
+        </>
+      )}
+      <span class="copy">© {currentYear} Najib Ninaba</span>
+    </small>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    max-width: var(--maxw);
+    margin: clamp(2rem, 10vh, 4rem) auto 2rem;
+    padding: 0 1rem;
+    color: var(--muted);
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .meta {
+    display: block;
+  }
+
+  .updated time {
+    color: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .sep {
+    opacity: 0.8;
+  }
+
+  .copy {
+    white-space: nowrap;
+  }
+</style>

@@ -1,0 +1,84 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Source code
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.sass text eol=lf
+*.less text eol=lf
+*.html text eol=lf
+*.htm text eol=lf
+*.xml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.astro text eol=lf
+
+# Configuration files
+*.ini text eol=lf
+*.cfg text eol=lf
+*.conf text eol=lf
+*.config text eol=lf
+*.toml text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+*.fish text eol=lf
+
+# Documentation
+README text eol=lf
+LICENSE text eol=lf
+CHANGELOG text eol=lf
+
+# Windows specific files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files (explicitly marked as binary)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.webp binary
+*.avif binary
+*.pdf binary
+*.zip binary
+*.tar binary
+*.gz binary
+*.7z binary
+*.rar binary
+*.mp4 binary
+*.mov binary
+*.avi binary
+*.mp3 binary
+*.wav binary
+*.flac binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.eot binary
+
+# Archives
+*.tar linguist-generated=true
+*.zip linguist-generated=true
+
+# Lock files should not have diffs shown
+package-lock.json -diff
+yarn.lock -diff
+pnpm-lock.yaml -diff
+
+# Generated files
+dist/ linguist-generated=true
+build/ linguist-generated=true
+coverage/ linguist-generated=true

@@ -1,0 +1,36 @@
+---
+interface Props {
+  id?: string;
+  title?: string;
+  intro?: string;
+}
+const { id, title, intro } = Astro.props as Props;
+---
+
+<section id={id} class="section reveal">
+  {title && <h2 class="title">{title}</h2>}
+  {intro && <p class="intro">{intro}</p>}
+  <slot />
+</section>
+
+<style>
+  .section {
+    max-width: var(--maxw);
+    margin: 0 auto clamp(2rem, 6vh, 3.5rem);
+    padding: 0 1rem;
+  }
+
+  .title {
+    margin: 0 0 0.75rem 0;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.25;
+  }
+
+  .intro {
+    margin: 0 0 1rem 0;
+    color: var(--muted);
+    max-width: 70ch;
+  }
+</style>

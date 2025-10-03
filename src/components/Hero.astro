@@ -1,0 +1,71 @@
+---
+interface Props {
+  name: string;
+  title: string;
+  tagline?: string;
+}
+const { name, title, tagline } = Astro.props as Props;
+import SocialLinks from './SocialLinks.astro';
+---
+
+<header class="hero reveal" aria-label="Introduction">
+  <div class="topline" aria-label="Name and social links">
+    <h1 class="name">{name}</h1>
+    <div class="social-wrap">
+      <SocialLinks variant="hero" />
+    </div>
+  </div>
+  <p class="role">{title}</p>
+  {tagline && <p class="tagline">{tagline}</p>}
+</header>
+
+<style>
+  .hero {
+    max-width: var(--maxw);
+    margin: clamp(2rem, 10vh, 8rem) auto 3rem;
+    padding: 0 1rem;
+  }
+
+  .topline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .social-wrap {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .name {
+    letter-spacing: -0.02em;
+    margin: 0; /* ensure clean alignment in flex row */
+    font-weight: 700;
+  }
+
+  .role {
+    margin: 0.25rem 0 0;
+    font-size: clamp(1rem, 2.25vw, 1.15rem);
+    color: var(--fg);
+    opacity: 0.9;
+  }
+
+  .tagline {
+    margin: 0.5rem 0 0;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  /* Mobile: stack name and icons vertically, left-aligned */
+  @media (max-width: 640px) {
+    .topline {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .social-wrap {
+      margin-left: 0;
+    }
+  }
+</style>
