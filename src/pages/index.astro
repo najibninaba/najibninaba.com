@@ -15,7 +15,7 @@ const pageDesc = site.description;
 	<Hero name={site.name} title={site.title} tagline={site.tagline} />
 
 	<Section id="about" title="About">
-		<p>{site.about}</p>
+		{site.about.split('\n\n').map((p) => <p>{p}</p>)}
 	</Section>
 
 	<Section id="experience" title="Experience highlights">
