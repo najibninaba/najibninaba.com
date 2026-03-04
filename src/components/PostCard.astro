@@ -1,0 +1,115 @@
+---
+import type { Post } from '../data/posts';
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props as Props;
+
+const platformLabels: Record<string, string> = {
+  linkedin: 'LinkedIn',
+  x: 'X',
+  substack: 'Substack',
+};
+
+const platformColors: Record<string, string> = {
+  linkedin: '#0a66c2',
+  x: '#000000',
+  substack: '#ff6719',
+};
+
+const dateStr = new Date(post.date + 'T00:00:00').toLocaleDateString('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+});
+
+const linkText = `Read on ${platformLabels[post.platform] ?? post.platform}`;
+---
+
+<a href={post.url} class="post-card" target="_blank" rel="noopener noreferrer">
+  <div class="meta">
+    <span
+      class="platform-badge"
+      style={`background: ${platformColors[post.platform] ?? 'var(--muted)'}; ${
+        post.platform === 'x' ? 'border: 1px solid #333;' : ''
+      }`}
+    >
+      {platformLabels[post.platform] ?? post.platform}
+    </span>
+    <span class="date">{dateStr}</span>
+    {post.type === 'repost' && <span class="type-badge">Repost</span>}
+  </div>
+  <p class="hook">{post.hook}</p>
+  <span class="read-link">{linkText} &rarr;</span>
+</a>
+
+<style>
+  .post-card {
+    display: block;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none !important;
+    color: inherit;
+    transition: background 0.15s ease;
+    border-radius: 0;
+  }
+
+  .post-card:hover {
+    background: var(--panel);
+    margin: 0 -1rem;
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius);
+    border-color: transparent;
+  }
+
+  .post-card:hover + .post-card {
+    border-top-color: transparent;
+  }
+
+  .meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .platform-badge {
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .date {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .type-badge {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  .hook {
+    margin: 0 0 0.375rem;
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+
+  .read-link {
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-bottom: none !important;
+  }
+
+  .post-card:hover .read-link {
+    color: var(--fg);
+  }
+</style>

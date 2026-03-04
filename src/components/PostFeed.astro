@@ -1,0 +1,99 @@
+---
+import PostCard from './PostCard.astro';
+import { posts, getActivePlatforms } from '../data/posts';
+
+const platforms = getActivePlatforms();
+const showFilters = platforms.length > 1;
+---
+
+<div class="feed-section">
+  {showFilters && (
+    <nav class="filters" aria-label="Filter posts by platform">
+      <button class="filter-btn active" data-platform="all">All</button>
+      {platforms.map((p) => (
+        <button class="filter-btn" data-platform={p}>
+          {p === 'linkedin' ? 'LinkedIn' : p === 'x' ? 'X' : p === 'substack' ? 'Substack' : p}
+        </button>
+      ))}
+    </nav>
+  )}
+
+  <div class="post-list">
+    {posts.map((post) => (
+      <div class="post-item" data-platform={post.platform}>
+        <PostCard post={post} />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .feed-section {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--muted);
+    color: var(--fg);
+  }
+
+  .filter-btn.active {
+    background: var(--fg);
+    color: var(--bg);
+    border-color: var(--fg);
+  }
+
+  .post-item {
+    transition: opacity 0.2s ease, max-height 0.3s ease;
+  }
+
+  .post-item.hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    border: none;
+  }
+</style>
+
+<script is:inline>
+  const buttons = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.post-item');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const platform = btn.dataset.platform;
+
+      buttons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      items.forEach((item) => {
+        if (platform === 'all' || item.dataset.platform === platform) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
