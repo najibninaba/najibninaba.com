@@ -248,15 +248,15 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "The thesis only; the one large line on the page."
+        "purpose": "The h1 name only; the one large line on the page."
       },
       "title": {
         "displayName": "Title",
         "purpose": "Project names."
       },
-      "name": {
-        "displayName": "Name",
-        "purpose": "The h1 name at the top of the column."
+      "role-line": {
+        "displayName": "Role line",
+        "purpose": "The roles under the name, in Pencil, max 52ch."
       },
       "body-lead": {
         "displayName": "Body lead",
@@ -367,7 +367,7 @@
     {
       "name": "Social card",
       "kind": "custom",
-      "description": "Text-only public/og.png, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background; Ink name (30px Medium) and thesis (60px Medium, 1.08 line-height, -0.03em tracking, balanced 16ch measure); Pencil role lines (24px) and Geist Mono domain (22px). 80px left inset. No photo, logo, icons or gradient."
+      "description": "Text-only public/og.png, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background; Ink name (80px Medium, 1.08 line-height, -0.03em tracking); Pencil role lines (30px) and Geist Mono domain (22px). 80px left inset. No photo, logo, icons or gradient."
     },
     {
       "name": "Index Rail",
@@ -434,7 +434,7 @@
   ],
   "narrative": {
     "northStar": "The Index Card",
-    "overview": "The site is a minimal engineer's homepage, done straight: one reading column of plain facts next to a small sticky index of the sections. Type does all the ranking. There is one large line on the page (the thesis). Everything else sits between 12.5px and 18px, and weight, grey step and spacing do the rest of the work. Near-white paper, near-black ink, three greys and a hairline. The single blue accent is almost never seen: it marks keyboard focus and the active section in the rail, and nothing else.\n\nDensity is low and the measure is short. Sections are separated by whitespace instead of rules. Hairlines appear only between rows of a list. Project screenshots are the only images of any size, and they sit in quiet 12px frames rather than cards. The dark theme is a separate palette with its own values, not an inversion of the light one.\n\nMotion is limited to a single entrance: blocks rise 6px out of a 3px blur on load, and hover and state changes are 150 to 500ms. All of it stops under `prefers-reduced-motion`.",
+    "overview": "The site is a minimal engineer's homepage, done straight: one reading column of plain facts next to a small sticky index of the sections. Type does all the ranking. There is one large line on the page (the name). Everything else sits between 12.5px and 18px, and weight, grey step and spacing do the rest of the work. Near-white paper, near-black ink, three greys and a hairline. The single blue accent is almost never seen: it marks keyboard focus and the active section in the rail, and nothing else.\n\nDensity is low and the measure is short. Sections are separated by whitespace instead of rules. Hairlines appear only between rows of a list. Project screenshots are the only images of any size, and they sit in quiet 12px frames rather than cards. The dark theme is a separate palette with its own values, not an inversion of the light one.\n\nMotion is limited to a single entrance: blocks rise 6px out of a 3px blur on load, and hover and state changes are 150 to 500ms. All of it stops under `prefers-reduced-motion`.",
     "keyCharacteristics": [
       "One column (at most 680px) beside a 168px sticky rail, centred in a 1040px frame.",
       "Hierarchy through size, weight 500 against 400, and a three-step grey text ladder.",
@@ -461,7 +461,7 @@
       },
       {
         "name": "The One Loud Line Rule",
-        "body": "Only the thesis goes above 18px. Section headings are small, and space and position set them apart.",
+        "body": "Only the name goes above 18px. Section headings are small, and space and position set them apart.",
         "section": "typography"
       },
       {
@@ -487,7 +487,7 @@
     "donts": [
       "**Don't** add box shadows or gradients.",
       "**Don't** colour links, buttons or surfaces with the accent.",
-      "**Don't** set any text other than the thesis above 18px.",
+      "**Don't** set any text other than the name above 18px.",
       "**Don't** use Geist Mono for labels, metadata or body text.",
       "**Don't** add a fourth text grey or a heavier font weight than 500.",
       "**Don't** put project entries or list rows in bordered or tinted cards at rest. The Shelf panel is kept for the bio block; rows get the tint only on hover or focus."

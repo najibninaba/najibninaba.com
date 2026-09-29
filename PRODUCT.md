@@ -15,7 +15,7 @@ web
 A personal site for Najib Ninaba. It states who he is (Head of Platforms Engineering at AI Singapore; Senior Associate Director at NTU; hands-on builder of tools for agent-assisted development), shows the work that proves it, and points to his writing. Success means a visitor leaves knowing his position and his flagship projects, and follows, reads or gets in touch.
 
 ## Positioning
-He's a platform engineer who has run production systems for 25 years (early Linux HPC clusters in Singapore since around 2000, two startups, Platform Computing, Revolution Analytics, and one of AI Singapore's original four engineers) and who still ships code himself, for example Orchard's roughly 1,400 commits in 6 months. His thesis: "AI makes software cheaper to build, but not cheaper to own." Old HPC habits still apply: clear contracts, observable behaviour, disciplined workflows, and ownership after the demo.
+He's a platform engineer who has run production systems for 25 years (early Linux HPC clusters in Singapore since around 2000, two startups, Platform Computing, Revolution Analytics, and one of AI Singapore's original four engineers) and who still ships code himself, for example Orchard's roughly 1,400 commits in 6 months. Old HPC habits still apply: clear contracts, observable behaviour, disciplined workflows, and ownership after launch.
 
 ## Operating Context
 Static Astro site on GitHub Pages at najibninaba.com. Content is hand-curated in TypeScript (`src/data/site.ts`, `src/data/posts.ts`, `src/data/projects.ts`). The writing feed links out to LinkedIn, X and Substack. Visitors come mostly on mobile from social links, and on desktop from event pages.
