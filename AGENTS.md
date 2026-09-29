@@ -14,7 +14,7 @@ This repository powers najibninaba.com, an Astro (static) site. Keep changes sma
 - `pnpm dev` — start local dev server.
 - `pnpm build` — produce static site in `dist/`.
 - `pnpm preview` — serve the built site locally.
-Notes: Node `18` per `.nvmrc`. Use `pnpm` (install via `corepack enable` or `npm i -g pnpm`).
+Notes: Node `24` per `.nvmrc`. Use `pnpm` (install via `corepack enable` or `npm i -g pnpm`).
 
 ## Coding Style & Naming Conventions
 - TypeScript: 2‑space indentation; `.astro` files currently use tabs — follow the existing style per file. Do not reformat unrelated lines.
