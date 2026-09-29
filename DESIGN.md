@@ -30,11 +30,12 @@ typography:
     fontSize: "18px"
     fontWeight: 500
     letterSpacing: "-0.015em"
-  name:
+  role-line:
     fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "15px"
-    fontWeight: 500
-    letterSpacing: "-0.01em"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.55
+    fontFeature: "'ss01'"
   body-lead:
     fontFamily: "Geist, ui-sans-serif, system-ui, sans-serif"
     fontSize: "16px"
@@ -130,7 +131,7 @@ components:
 
 **Creative North Star: "The Index Card"**
 
-The site is a minimal engineer's homepage, done straight: one reading column of plain facts next to a small sticky index of the sections. Type does all the ranking. There is one large line on the page (the thesis). Everything else sits between 12.5px and 18px, and weight, grey step and spacing do the rest of the work. Near-white paper, near-black ink, three greys and a hairline. The single blue accent is almost never seen: it marks keyboard focus and the active section in the rail, and nothing else.
+The site is a minimal engineer's homepage, done straight: one reading column of plain facts next to a small sticky index of the sections. Type does all the ranking. There is one large line on the page (the name). Everything else sits between 12.5px and 18px, and weight, grey step and spacing do the rest of the work. Near-white paper, near-black ink, three greys and a hairline. The single blue accent is almost never seen: it marks keyboard focus and the active section in the rail, and nothing else.
 
 Density is low and the measure is short. Sections are separated by whitespace instead of rules. Hairlines appear only between rows of a list. Project screenshots are the only images of any size, and they sit in quiet 12px frames rather than cards. The dark theme is a separate palette with its own values, not an inversion of the light one.
 
@@ -156,7 +157,7 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 ### Neutral
 - **Paper** (`paper` / `paper-dark`): the page background, also the scrollbar track.
 - **Shelf** (`paper-2` / `paper-2-dark`): the only tinted surface. Used for the bio panel, the frame behind project screenshots, the writing-row hover and the theme-toggle hover.
-- **Ink** (`ink` / `ink-dark`): headings, the name, the thesis, list titles and active or hovered navigation.
+- **Ink** (`ink` / `ink-dark`): headings, the name, list titles and active or hovered navigation.
 - **Graphite** (`ink-2` / `ink-2-dark`): reading prose (intro, project descriptions, bio copy) and secondary controls.
 - **Pencil** (`ink-3` / `ink-3-dark`): section labels, role lines, metadata, captions, dates, idle rail links, the footer and the scrollbar thumb.
 - **Hairline** (`rule` / `rule-dark`): 1px row dividers, the screenshot frame border, the avatar outline and the copy-button border.
@@ -177,18 +178,18 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 **Character:** A single neo-grotesque family at two weights, 400 and 500. Body text enables Geist's `ss01` stylistic set. The mono face appears only where numbers need to align.
 
 ### Hierarchy
-- **Display** (500, clamp 34 to 48px, line-height 1.08, -0.03em, balanced, max 16ch): the thesis only. It is the one large line on the page.
+- **Display** (500, clamp 34 to 48px, line-height 1.08, -0.03em, balanced): the h1 name only. It is the one large line on the page.
 - **Title** (500, 18px, -0.015em): project names.
-- **Name** (500, 15px, -0.01em): the h1 name at the top of the column.
 - **Body lead** (400, 16px, line-height 1.7, max 60ch): the first-person intro, set in Graphite.
 - **Body** (400, 15.5px, line-height 1.65, max 60ch): project descriptions and writing and experience rows.
-- **Body small** (400, 14px, line-height 1.6): role lines, rail links and experience summaries (line-height 1.55). Bio copy is a 14.5px variant at line-height 1.7.
+- **Role line** (400, 16px, line-height 1.55, max 52ch, Pencil): the roles under the name, 16px below it.
+- **Body small** (400, 14px, line-height 1.6): rail links and experience summaries (line-height 1.55). Bio copy is a 14.5px variant at line-height 1.7.
 - **Label** (500, 13px, Pencil): the section headings (Projects, Writing, Experience, Bio).
 - **Meta** (400, 13px): project role and status lines, captions, project URLs, copy buttons and the footer.
 - **Mono date** (Geist Mono, 12.5px, tabular figures, Pencil): post dates and experience year ranges.
 
 ### Named Rules
-**The One Loud Line Rule.** Only the thesis goes above 18px. Section headings are small, and space and position set them apart.
+**The One Loud Line Rule.** Only the name goes above 18px. Section headings are small, and space and position set them apart.
 
 **The Mono Is For Time Rule.** Geist Mono is used only for dates and year ranges, always with tabular figures.
 
@@ -196,7 +197,7 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 
 A centred 1040px frame with 24px side padding, a top padding of `clamp(3rem, 11vh, 7.5rem)` and 96px at the bottom. It holds a two-column grid: a 168px rail and a `minmax(0, 1fr)` column capped at 680px, with a 64px gap. The rail is sticky at `clamp(24px, 6vh, 56px)` from the top. From top to bottom it holds a 36px round avatar, the section nav 40px below it (items 8px apart, at least 24px tall) and the theme toggle 40px below that.
 
-Vertical rhythm: 96px between sections, and 96px before the footer, which has a hairline above it. Within the About block there are 40px steps between name, thesis and intro. Section labels sit 24px above their content. Projects are 56px apart, with 20px between image and heading. Writing and experience rows share a two-column grid: a 104px date column, a 16px gap and the text. Rows are padded 10px (writing) or 12px (experience).
+Vertical rhythm: 96px between sections, and 96px before the footer, which has a hairline above it. Within the About block the role line sits 16px below the name and the intro 40px below the role line. Section labels sit 24px above their content. Projects are 56px apart, with 20px between image and heading. Writing and experience rows share a two-column grid: a 104px date column, a 16px gap and the text. Rows are padded 10px (writing) or 12px (experience).
 
 Breakpoints:
 - **767px and below:** one column with a 40px row gap. The rail turns into a static top bar with the avatar on the left and the theme toggle on the right, and the section nav is hidden.
@@ -249,7 +250,7 @@ A quiet table of contents that follows the reader.
 - **Short and long toggle:** a 13px Pencil text button. Without JavaScript, the long bio falls back to a native `details` element.
 
 ### Social card
-Text-only `public/og.png`, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background, Ink name (30px Medium) and thesis (60px Medium, 1.08 line-height, -0.03em tracking, balanced 16ch measure); Pencil role lines (24px) and Geist Mono domain (22px). Left inset is 80px. No photo, logo, icons or gradient.
+Text-only `public/og.png`, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background, Ink name (80px Medium, 1.08 line-height, -0.03em tracking); Pencil role lines (30px) and Geist Mono domain (22px). Left inset is 80px. No photo, logo, icons or gradient.
 
 ### Site icon
 Text-only `NN` monogram in outlined Geist Medium, centred on Paper with Ink lettering and a 6px corner radius. The SVG follows `prefers-color-scheme`; the 180×180 Apple touch icon and 32×32 ICO fallback use the light palette. No photo.
@@ -271,7 +272,7 @@ Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on
 ### Don't:
 - **Don't** add box shadows or gradients.
 - **Don't** colour links, buttons or surfaces with the accent.
-- **Don't** set any text other than the thesis above 18px.
+- **Don't** set any text other than the name above 18px.
 - **Don't** use Geist Mono for labels, metadata or body text.
 - **Don't** add a fourth text grey or a heavier font weight than 500.
 - **Don't** put project entries or list rows in bordered or tinted cards at rest. The Shelf panel is kept for the bio block; rows get the tint only on hover or focus.
