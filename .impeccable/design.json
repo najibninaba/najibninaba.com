@@ -327,10 +327,6 @@
         "value": "max-width: 420px"
       },
       {
-        "name": "bio-stack",
-        "value": "max-width: 639px / min-width: 640px"
-      },
-      {
         "name": "rail-collapse",
         "value": "max-width: 767px"
       },
@@ -368,7 +364,7 @@
       "kind": "nav",
       "refersTo": "rail-link",
       "description": "Sticky section index; the accent dot marks the current section.",
-      "html": "<nav class=\"ds-rail\"><ul><li><a href=\"#\" aria-current=\"location\"><span></span>About</a></li><li><a href=\"#\"><span></span>Projects</a></li><li><a href=\"#\"><span></span>Writing</a></li><li><a href=\"#\"><span></span>Experience</a></li><li><a href=\"#\"><span></span>Bio &amp; headshot</a></li></ul></nav>",
+      "html": "<nav class=\"ds-rail\"><ul><li><a href=\"#\" aria-current=\"location\"><span></span>About</a></li><li><a href=\"#\"><span></span>Projects</a></li><li><a href=\"#\"><span></span>Writing</a></li><li><a href=\"#\"><span></span>Experience</a></li><li><a href=\"#\"><span></span>Bio</a></li></ul></nav>",
       "css": ".ds-rail ul { margin: 0; padding: 0; list-style: none; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-rail li + li { margin-top: 8px; } .ds-rail a { display: flex; align-items: center; gap: 10px; min-height: 24px; font-size: 14px; color: var(--ink-3, #6f6f6b); text-decoration: none; transition: color 150ms; } .ds-rail a:hover, .ds-rail a[aria-current] { color: var(--ink, #151515); } .ds-rail a:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; } .ds-rail a span { width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #1a56c4); opacity: 0; transform: scale(.4); transition: opacity 200ms, transform 200ms; } .ds-rail a[aria-current] span { opacity: 1; transform: scale(1); }"
     },
     {
@@ -421,9 +417,9 @@
       "name": "Bio Panel",
       "kind": "card",
       "refersTo": "bio-panel",
-      "description": "The only tinted panel: portrait with download link beside copy buttons and bio text.",
-      "html": "<div class=\"ds-bio\"><div class=\"ds-bio-portrait\"><div class=\"ds-bio-img\"></div><a href=\"#\">Download</a></div><div><p>Najib Ninaba is Head of Platforms Engineering at AI Singapore and Senior Associate Director at Nanyang Technological University.</p><button type=\"button\">Show long bio</button></div></div>",
-      "css": ".ds-bio { display: grid; grid-template-columns: 132px 1fr; gap: 32px; padding: 24px; background: var(--paper-2, #f4f4f2); border-radius: 12px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-bio-img { aspect-ratio: 4/5; border-radius: 8px; background: var(--rule, #e6e6e3); } .ds-bio-portrait a { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--ink-2, #555552); text-decoration: underline 1px color-mix(in oklab, var(--ink, #151515) 25%, transparent); text-underline-offset: .22em; } .ds-bio p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-2, #555552); } .ds-bio button { margin-top: 12px; padding: 0; border: 0; background: none; font: 400 13px Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink-3, #6f6f6b); cursor: pointer; } .ds-bio button:hover { color: var(--ink, #151515); } .ds-bio a:focus-visible, .ds-bio button:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; }"
+      "description": "The only tinted panel: a single column with three copy buttons above bio text and the short/long toggle, without a portrait or download.",
+      "html": "<div class=\"ds-bio\"><div class=\"ds-bio-buttons\"><button type=\"button\">Copy title</button><button type=\"button\">Copy short bio</button><button type=\"button\">Copy long bio</button></div><p>Najib Ninaba is Head of Platforms Engineering at AI Singapore and Senior Associate Director at Nanyang Technological University.</p><button class=\"ds-bio-toggle\" type=\"button\">Show long bio</button></div>",
+      "css": ".ds-bio { padding: 24px; background: var(--paper-2, #f4f4f2); border-radius: 12px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-bio-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; } .ds-bio-buttons button { min-height: 28px; padding: 3px 10px; border: 1px solid var(--rule, #e6e6e3); border-radius: 6px; background: none; font: 400 13px Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink-2, #555552); cursor: pointer; } .ds-bio-buttons button:hover { border-color: var(--ink-3, #6f6f6b); } .ds-bio p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-2, #555552); } .ds-bio-toggle { margin-top: 12px; min-height: 24px; padding: 0; border: 0; background: none; font: 400 13px Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink-3, #6f6f6b); cursor: pointer; } .ds-bio button:hover { color: var(--ink, #151515); } .ds-bio button:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; }"
     }
   ],
   "narrative": {

@@ -8,7 +8,7 @@ web
 
 ## Users
 - **Engineering peers and leaders** (primary): platform, infra and AI engineers and their managers. They arrive from a LinkedIn/X/Substack post or a conference mention and want to judge, in a minute or two, whether Najib's view on AI platforms and agent-assisted development is worth following.
-- **Event organisers and press**: they need an accurate title, a short or long bio, a headshot and links, and they need them fast and copy-pasteable.
+- **Event organisers and press**: they need an accurate title, a short or long bio and links, and they need them fast and copy-pasteable.
 - **Collaborators and hiring**: potential partners, contributors and recruiters checking his track record and what he is building now.
 
 ## Product Purpose
@@ -35,6 +35,7 @@ Static Astro site on GitHub Pages at najibninaba.com. Content is hand-curated in
 - Voice: plain, direct and practical. Delivery over theory, ownership over hype. No superlatives or buzzwords.
 - Name as written: "Najib Ninaba".
 - Role order: Head of Platforms Engineering, AI Singapore first; Senior Associate Director, NTU second (Najib, 2026-09-29).
+- No downloadable headshot. Najib does not provide headshots for organisers (2026-09-29).
 - Assets on hand: `public/profile.png` (casual headshot).
 - Visual direction (standing preference, chosen 2026-09-29): the category standard played straight, a minimal engineer's homepage with no themed metaphor. The craft bar comes from paco.me, rauno.me, leerob.com, brianlovin.com, mitchellh.com and simonwillison.net: typography first, restrained, precise interaction details, writing and projects as clean lists, and polished light/dark themes.
 
@@ -48,7 +49,7 @@ Static Astro site on GitHub Pages at najibninaba.com. Content is hand-curated in
 ## Product Principles
 1. Proof over claims: show the work (repos, commits, screenshots) instead of adjectives.
 2. Accurate to the canonical bio: every factual statement must trace back to it or to a public repo.
-3. Easy for organisers: title, bio and headshot must be easy to find and copy.
+3. Easy for organisers: title and bio must be easy to find and copy.
 4. Built like he builds: fast, static, accessible and nothing extra, so the site itself shows good ownership.
 
 ## Accessibility & Inclusion

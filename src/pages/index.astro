@@ -8,7 +8,7 @@ import profile from '../../public/profile.png';
 import { site, intro, socialLinks } from '../data/site';
 import { projects } from '../data/projects';
 import { posts } from '../data/posts';
-const sections = [ ['about', 'About'], ['projects', 'Projects'], ['writing', 'Writing'], ['experience', 'Experience'], ['bio', 'Bio & headshot'] ];
+const sections = [ ['about', 'About'], ['projects', 'Projects'], ['writing', 'Writing'], ['experience', 'Experience'], ['bio', 'Bio'] ];
 const latestPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
 const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 ---
@@ -50,7 +50,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 				<h2 id="experience-heading">Experience</h2>
 				<ol class="experience">{site.experiences.map(item => <li><span class="mono period">{item.period}</span><div><p>{item.title}{item.org && <span class="org"> · {item.org}</span>}</p><p class="summary">{item.summary}</p></div></li>)}</ol>
 			</section>
-			<section id="bio" aria-labelledby="bio-heading"><h2 id="bio-heading">Bio &amp; headshot</h2><Bio /></section>
+			<section id="bio" aria-labelledby="bio-heading"><h2 id="bio-heading">Bio</h2><Bio /></section>
 			<footer><span>Singapore</span><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href}><span>{link.label}</span><ArrowUpRight /></a>)}</nav></footer>
 		</main>
 	</div>

@@ -69,7 +69,6 @@ typography:
 rounded:
   focus: "3px"
   control: "6px"
-  image: "8px"
   frame: "12px"
   round: "50%"
 spacing:
@@ -184,7 +183,7 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 - **Body lead** (400, 16px, line-height 1.7, max 60ch): the first-person intro, set in Graphite.
 - **Body** (400, 15.5px, line-height 1.65, max 60ch): project descriptions and writing and experience rows.
 - **Body small** (400, 14px, line-height 1.6): role lines, rail links and experience summaries (line-height 1.55). Bio copy is a 14.5px variant at line-height 1.7.
-- **Label** (500, 13px, Pencil): the section headings (Projects, Writing, Experience, Bio & headshot).
+- **Label** (500, 13px, Pencil): the section headings (Projects, Writing, Experience, Bio).
 - **Meta** (400, 13px): project role and status lines, captions, project URLs, copy buttons and the footer.
 - **Mono date** (Geist Mono, 12.5px, tabular figures, Pencil): post dates and experience year ranges.
 
@@ -201,7 +200,6 @@ Vertical rhythm: 96px between sections, and 96px before the footer, which has a 
 
 Breakpoints:
 - **767px and below:** one column with a 40px row gap. The rail turns into a static top bar with the avatar on the left and the theme toggle on the right, and the section nav is hidden.
-- **639px and below:** the bio panel stacks, with the portrait capped at 200px. At 640px and above it uses a 132px portrait column.
 - **420px and below:** the date column narrows to 90px with a 14px gap.
 
 Sections use `scroll-margin-top: 64px`, so in-page links land clear of the top edge.
@@ -215,7 +213,7 @@ The system is flat. There is no `box-shadow` or gradient anywhere. Depth comes f
 
 ## Shapes
 
-Corners are soft and graded by object size: 12px for large frames (screenshot previews, the bio panel), 8px for the portrait image, 6px for small controls and row hovers (copy buttons, writing rows) and 3px on the focus ring. Identity and icon marks are fully round: the avatar, the rail dot and the theme toggle. Borders are always 1px hairlines. Screenshots are cropped to 16:9 from the top; the portrait is 4:5 and positioned at 50% 30%.
+Corners are soft and graded by object size: 12px for large frames (screenshot previews, the bio panel), 6px for small controls and row hovers (copy buttons, writing rows) and 3px on the focus ring. Identity and icon marks are fully round: the avatar, the rail dot and the theme toggle. Borders are always 1px hairlines. Screenshots are cropped to 16:9 from the top.
 
 ## Components
 
@@ -246,10 +244,9 @@ A quiet table of contents that follows the reader.
 - **Experience:** the title is in Ink with the organisation in Pencil after a middle dot, and a 14px Pencil summary below.
 
 ### Bio Panel
-- **Container:** a Shelf panel with a 12px radius, 24px padding and a 32px gap, containing a portrait and the copy text.
+- **Container:** a single-column Shelf panel with a 12px radius and 24px padding, containing three copy buttons above the bio text, followed by the short and long toggle. No portrait or download link.
 - **Copy buttons:** transparent, with a 1px hairline border, 6px radius, 28px minimum height, 13px Graphite text and a 12px copy icon. On hover the border darkens to Pencil and the text turns Ink. On success the label reads "Copied" with a check icon for 1.8s. They appear only when the Clipboard API exists.
 - **Short and long toggle:** a 13px Pencil text button. Without JavaScript, the long bio falls back to a native `details` element.
-- **Download:** a 13px Graphite link under the portrait.
 
 ### Entrance Motion
 Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on `cubic-bezier(.16,1,.3,1)`, staggered 70ms per step. This runs only under `prefers-reduced-motion: no-preference`. Under `reduce`, every animation and transition is removed.
@@ -279,7 +276,7 @@ All generated responsive WebP derivatives inherit their source's attribution. As
 
 | Asset | Source and handling | Attribution |
 | --- | --- | --- |
-| `public/profile.png` | Existing user-supplied portrait. Used for the avatar, bio, original download and social image. Astro creates resized WebP derivatives. The photographer and creation date are not recorded. | Portrait supplied by Najib Ninaba; no additional rights claim made. |
+| `public/profile.png` | Existing user-supplied portrait. Used for the avatar and social image. Astro creates resized WebP derivatives. The photographer and creation date are not recorded. | Portrait supplied by Najib Ninaba; no additional rights claim made. |
 | `public/projects/orchard/playground-inference.webp` | From `kapitan-ai/orchard`, `docs/media/playground-inference.png`, imported on 2026-09-29. Prior production: ImageMagick `-resize '1600x>' -quality 82`. Astro creates top-aligned 16:9 WebP derivatives. | © 2026 AI Singapore, Orchard repository material under its Apache-2.0 documentation terms. |
 | `public/projects/orchard/request-details.webp` | From `kapitan-ai/orchard`, `docs/media/request-details.png`, imported on 2026-09-29 with the same settings. Kept but not displayed. | © 2026 AI Singapore, same Orchard attribution. |
 | `public/projects/cuaca/now-1440.png` | Capture of https://cuaca.bijan.app/ on 2026-09-29, Now view, 1440×900 CSS px at 2× DPR. Astro creates top-aligned WebP derivatives. | Cuaca, created by Najib Ninaba. Visible linked caption: "Captured 29 Sep 2026 from cuaca.bijan.app". |
