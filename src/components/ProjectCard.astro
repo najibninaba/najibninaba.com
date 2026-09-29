@@ -1,0 +1,111 @@
+---
+import type { Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props as Props;
+---
+
+<article class="project panel">
+  <div class="heading">
+    {project.logo && <img class="logo" src={project.logo} alt="" width="48" height="48" />}
+    <div>
+      <h3>{project.name}</h3>
+      <p class="role">{project.role}</p>
+    </div>
+  </div>
+
+  {project.pitch && <p class="pitch">{project.pitch}</p>}
+  <p>{project.description}</p>
+  {project.details.map((detail) => <p>{detail}</p>)}
+
+  {(project.status || project.license) && (
+    <p class="meta">{[project.status, project.license].filter(Boolean).join(' · ')}</p>
+  )}
+
+  {(project.url || project.siteUrl || project.demoUrl) && (
+    <div class="links">
+      {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer">Source</a>}
+      {project.siteUrl && <a href={project.siteUrl} target="_blank" rel="noopener noreferrer">Website</a>}
+      {project.demoUrl && <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">Demo video</a>}
+    </div>
+  )}
+
+  {project.images && project.images.length > 0 && (
+    <div class="gallery">
+      {project.images.map((image) => (
+        <img src={image.src} alt={image.alt} loading="lazy" />
+      ))}
+    </div>
+  )}
+</article>
+
+<style>
+  .project {
+    padding: clamp(1rem, 2vw, 1.35rem);
+  }
+
+  .project + .project {
+    margin-top: 1rem;
+  }
+
+  .heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  h3,
+  .role,
+  .meta {
+    margin: 0;
+  }
+
+  .role,
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .pitch {
+    font-weight: 600;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .links a {
+    border-bottom-color: var(--muted);
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .gallery img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 560px;
+    margin: 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+</style>
