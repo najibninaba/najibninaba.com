@@ -251,6 +251,9 @@ A quiet table of contents that follows the reader.
 ### Social card
 Text-only `public/og.png`, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background, Ink name (30px Medium) and thesis (60px Medium, 1.08 line-height, -0.03em tracking, balanced 16ch measure); Pencil role lines (24px) and Geist Mono domain (22px). Left inset is 80px. No photo, logo, icons or gradient.
 
+### Site icon
+Text-only `NN` monogram in outlined Geist Medium, centred on Paper with Ink lettering and a 6px corner radius. The SVG follows `prefers-color-scheme`; the 180×180 Apple touch icon and 32×32 ICO fallback use the light palette. No photo.
+
 ### Entrance Motion
 Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on `cubic-bezier(.16,1,.3,1)`, staggered 70ms per step. This runs only under `prefers-reduced-motion: no-preference`. Under `reduce`, every animation and transition is removed.
 
@@ -275,14 +278,14 @@ Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on
 
 ## Raster provenance
 
-All generated responsive WebP derivatives inherit their source's attribution. Astro also copies the original files under `public/`, including the unused request-details image.
+All generated responsive WebP derivatives inherit their source's attribution. Project screenshot sources live under `src/assets/projects/`, so Astro emits only the optimized derivatives used by the page.
 
 | Asset | Source and handling | Attribution |
 | --- | --- | --- |
 | `public/profile.png` | Existing user-supplied portrait. Used for the avatar and social image. Astro creates resized WebP derivatives. The photographer and creation date are not recorded. | Portrait supplied by Najib Ninaba; no additional rights claim made. |
-| `public/projects/orchard/playground-inference.webp` | From `kapitan-ai/orchard`, `docs/media/playground-inference.png`, imported on 2026-09-29. Prior production: ImageMagick `-resize '1600x>' -quality 82`. Astro creates top-aligned 16:9 WebP derivatives. | © 2026 AI Singapore, Orchard repository material under its Apache-2.0 documentation terms. |
-| `public/projects/orchard/request-details.webp` | From `kapitan-ai/orchard`, `docs/media/request-details.png`, imported on 2026-09-29 with the same settings. Kept but not displayed. | © 2026 AI Singapore, same Orchard attribution. |
-| `public/projects/cuaca/now-1440.png` | Capture of https://cuaca.bijan.app/ on 2026-09-29, Now view, 1440×900 CSS px at 2× DPR. Astro creates top-aligned WebP derivatives. | Cuaca, created by Najib Ninaba. Visible linked caption: "Captured 29 Sep 2026 from cuaca.bijan.app". |
+| `public/apple-touch-icon.png`, `public/favicon.ico` | Rendered from the outlined Geist Medium `NN` monogram in `public/favicon.svg` on 2026-09-29. Provenance is recorded in adjacent JSON sidecars because `impeccable embed-prompt` was unavailable. | Site-owned monogram; no photo or third-party artwork. |
+| `src/assets/projects/playground-inference.webp` | From `kapitan-ai/orchard`, `docs/media/playground-inference.png`, imported on 2026-09-29. Prior production: ImageMagick `-resize '1600x>' -quality 82`. Astro creates top-aligned 16:9 WebP derivatives. | © 2026 AI Singapore, Orchard repository material under its Apache-2.0 documentation terms. |
+| `src/assets/projects/now-1440.png` | Capture of https://cuaca.bijan.app/ on 2026-09-29, Now view, 1440×900 CSS px at 2× DPR. Astro creates top-aligned WebP derivatives. | Cuaca, created by Najib Ninaba. Visible linked caption: "Captured 29 Sep 2026 from cuaca.bijan.app". |
 | `src/assets/projects/repoprompt-agent-new-session.webp` | Downloaded from https://repoprompt.com/images/agent-new-session.webp on 2026-09-29 (source 2584×1794). Astro creates top-aligned 16:9 WebP derivatives. | © Repo Prompt, used with attribution. Visible linked caption: "Screenshot © Repo Prompt, repoprompt.com". |
 
 The Orchard source provenance comes from the prior content-build thread ([T-01a0ec44](https://ampcode.com/threads/T-01a0ec44-ab92-75bd-8c23-51fc3823baba)). Its source checkout commit was not recorded.
