@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 import PostFeed from '../components/PostFeed.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
+import { projects } from '../data/projects';
 
 const pageTitle = `${site.name} — ${site.title}`;
 const pageDesc = site.description;
@@ -15,6 +17,10 @@ const pageDesc = site.description;
 <Layout title={pageTitle} description={pageDesc}>
 	<main class="container">
 	<Hero name={site.name} title={site.title} tagline={site.tagline} />
+
+	<Section id="projects" title="Projects" intro={site.currentFocus}>
+		{projects.map((project) => <ProjectCard project={project} />)}
+	</Section>
 
 	<Section id="writing" title="Writing">
 		<PostFeed />
@@ -26,10 +32,6 @@ const pageDesc = site.description;
 
 	<Section id="experience" title="Experience">
 		{site.experiences.map((x) => <ExperienceItem item={x} />)}
-	</Section>
-
-	<Section id="current-focus" title="Current focus">
-		<p>{site.currentFocus}</p>
 	</Section>
 
 	<Section id="connect" title="Connect">
