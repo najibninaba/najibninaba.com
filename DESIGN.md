@@ -248,6 +248,9 @@ A quiet table of contents that follows the reader.
 - **Copy buttons:** transparent, with a 1px hairline border, 6px radius, 28px minimum height, 13px Graphite text and a 12px copy icon. On hover the border darkens to Pencil and the text turns Ink. On success the label reads "Copied" with a check icon for 1.8s. They appear only when the Clipboard API exists.
 - **Short and long toggle:** a 13px Pencil text button. Without JavaScript, the long bio falls back to a native `details` element.
 
+### Social card
+Text-only `public/og.png`, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background, Ink name (30px Medium) and thesis (60px Medium, 1.08 line-height, -0.03em tracking, balanced 16ch measure); Pencil role lines (24px) and Geist Mono domain (22px). Left inset is 80px. No photo, logo, icons or gradient.
+
 ### Entrance Motion
 Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on `cubic-bezier(.16,1,.3,1)`, staggered 70ms per step. This runs only under `prefers-reduced-motion: no-preference`. Under `reduce`, every animation and transition is removed.
 

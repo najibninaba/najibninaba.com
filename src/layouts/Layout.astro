@@ -4,7 +4,7 @@ import monoFont from '@fontsource-variable/geist-mono/files/geist-mono-latin-wgh
 import { site, socialLinks } from '../data/site';
 const title = `${site.name} — ${site.title}`;
 const url = 'https://najibninaba.com/';
-const image = `${url}profile.png`;
+const image = `${url}og.png`;
 const person = {
 	'@context': 'https://schema.org', '@type': 'Person', name: site.name,
 	jobTitle: 'Head of Platforms Engineering',
@@ -34,13 +34,16 @@ const person = {
 		<meta property="og:site_name" content={site.name} />
 		<meta property="og:url" content={url} />
 		<meta property="og:image" content={image} />
-		<meta property="og:image:alt" content="Najib Ninaba" />
-		<meta name="twitter:card" content="summary" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:alt" content="Najib Ninaba: AI makes software cheaper to build, but not cheaper to own." />
+		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@najibninaba" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={site.description} />
 		<meta name="twitter:image" content={image} />
-		<meta name="twitter:image:alt" content="Najib Ninaba" />
+		<meta name="twitter:image:alt" content="Najib Ninaba: AI makes software cheaper to build, but not cheaper to own." />
 		<meta name="color-scheme" content="light dark" />
 		<script type="application/ld+json" is:inline set:html={JSON.stringify(person)} />
 		<script defer src="https://cloud.umami.is/script.js" data-website-id="6acd4b80-c735-46b8-b8dc-fd967a73d827"></script>

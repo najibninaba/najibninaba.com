@@ -360,6 +360,11 @@
   },
   "components": [
     {
+      "name": "Social card",
+      "kind": "custom",
+      "description": "Text-only public/og.png, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background; Ink name (30px Medium) and thesis (60px Medium, 1.08 line-height, -0.03em tracking, balanced 16ch measure); Pencil role lines (24px) and Geist Mono domain (22px). 80px left inset. No photo, logo, icons or gradient."
+    },
+    {
       "name": "Index Rail",
       "kind": "nav",
       "refersTo": "rail-link",
