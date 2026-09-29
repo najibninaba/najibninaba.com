@@ -197,10 +197,17 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 
 A centred 1040px frame with 24px side padding, a top padding of `clamp(3rem, 11vh, 7.5rem)` and 96px at the bottom. It holds a two-column grid: a 168px rail and a `minmax(0, 1fr)` column capped at 680px, with a 64px gap. The rail is sticky at `clamp(24px, 6vh, 56px)` from the top. From top to bottom it holds a 36px round avatar, the section nav 40px below it (items 8px apart, at least 24px tall) and the theme toggle 40px below that.
 
-Vertical rhythm: 96px between sections, and 96px before the footer, which has a hairline above it. Within the About block the role line sits 16px below the name and the intro 40px below the role line. Section labels sit 24px above their content. Projects are 56px apart, with 20px between image and heading. Writing and experience rows share a two-column grid: a 104px date column, a 16px gap and the text. Rows are padded 10px (writing) or 12px (experience).
+Vertical rhythm: 96px between sections, and 96px before the footer, which has a hairline above it.
+Within the About block the role line sits 16px below the name and the intro 40px below the role line.
+Section labels sit 24px above their content.
+Projects are 40px apart, with a 192px thumbnail and text in columns separated by 24px.
+At 600px and below, the thumbnail stacks above the text with a 16px gap.
+Writing and experience rows share a two-column grid: a 104px date column, a 16px gap and the text.
+Rows are padded 10px (writing) or 12px (experience).
 
 Breakpoints:
 - **767px and below:** one column with a 40px row gap. The rail turns into a static top bar with the avatar on the left and the theme toggle on the right, and the section nav is hidden.
+- **600px and below:** project thumbnails stack above the text at a fixed 192px width.
 - **420px and below:** the date column narrows to 90px with a 14px gap.
 
 Sections use `scroll-margin-top: 64px`, so in-page links land clear of the top edge.
@@ -214,7 +221,10 @@ The system is flat. There is no `box-shadow` or gradient anywhere. Depth comes f
 
 ## Shapes
 
-Corners are soft and graded by object size: 12px for large frames (screenshot previews, the bio panel), 6px for small controls and row hovers (copy buttons, writing rows) and 3px on the focus ring. Identity and icon marks are fully round: the avatar, the rail dot and the theme toggle. Borders are always 1px hairlines. Screenshots are cropped to 16:9 from the top.
+Corners are soft and graded by object size: 12px for large frames (screenshot previews, the bio panel), 6px for small controls and row hovers (copy buttons, writing rows) and 3px on the focus ring.
+Identity and icon marks are fully round: the avatar, the rail dot and the theme toggle.
+Borders are always 1px hairlines.
+Screenshots are cropped to 16:10 from the top.
 
 ## Components
 
@@ -234,7 +244,9 @@ A quiet table of contents that follows the reader.
 - **Outbound (project URLs, footer):** only the text span is underlined, followed by an 11px up-right arrow drawn as inline SVG with a 3px left margin.
 
 ### Project Entry
-- **Preview:** a 16:9 top-aligned screenshot in a clipped frame with a 1px hairline border, 12px radius and Shelf background. On hover the image scales to 1.015 (500ms, expo-out).
+- **Preview:** a 192px-wide, 16:10 top-aligned thumbnail beside the project text, in a clipped frame with a 1px hairline border, 12px radius and Shelf background.
+  On narrow phones it stacks above the text without expanding to full width.
+  On hover the image scales to 1.015 (500ms, expo-out).
 - **Caption:** optional, 13px Pencil, 8px below the image, holding an attribution link.
 - **Heading row:** the project name in Title style (linked without an underline), with the role, status and licence in 13px Pencil. They sit at either end of one wrapping baseline row.
 - **Body:** a 15.5px Graphite description, then the bare URL in the outbound link style.
@@ -264,7 +276,7 @@ Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on
 - **Do** keep all text in the Ink, Graphite and Pencil steps, and create emphasis with weight 500 or size.
 - **Do** reserve the accent for the focus ring (2px solid, 3px offset) and the active rail dot.
 - **Do** separate sections with 96px of space and list rows with 1px hairlines.
-- **Do** frame screenshots at 16:9, top-aligned, with a hairline border and a 12px radius, and dim them to 0.88 brightness in dark mode.
+- **Do** frame thumbnails at 16:10, top-aligned, with a hairline border and a 12px radius, and dim them to 0.88 brightness in dark mode.
 - **Do** set dates and year ranges in Geist Mono at 12.5px with tabular figures.
 - **Do** define every new colour in both the light and the dark palette.
 - **Do** keep interactive targets at least 24px tall.
@@ -285,8 +297,8 @@ All generated responsive WebP derivatives inherit their source's attribution. Pr
 | --- | --- | --- |
 | `public/profile.png` | Existing user-supplied portrait. Used for the avatar and social image. Astro creates resized WebP derivatives. The photographer and creation date are not recorded. | Portrait supplied by Najib Ninaba; no additional rights claim made. |
 | `public/apple-touch-icon.png`, `public/favicon.ico` | Rendered from the outlined Geist Medium `NN` monogram in `public/favicon.svg` on 2026-09-29. Provenance is recorded in adjacent JSON sidecars because `impeccable embed-prompt` was unavailable. | Site-owned monogram; no photo or third-party artwork. |
-| `src/assets/projects/playground-inference.webp` | From `kapitan-ai/orchard`, `docs/media/playground-inference.png`, imported on 2026-09-29. Prior production: ImageMagick `-resize '1600x>' -quality 82`. Astro creates top-aligned 16:9 WebP derivatives. | © 2026 AI Singapore, Orchard repository material under its Apache-2.0 documentation terms. |
+| `src/assets/projects/playground-inference.webp` | From `kapitan-ai/orchard`, `docs/media/playground-inference.png`, imported on 2026-09-29. Prior production: ImageMagick `-resize '1600x>' -quality 82`. Astro creates top-aligned 16:10 WebP thumbnail derivatives. | © 2026 AI Singapore, Orchard repository material under its Apache-2.0 documentation terms. |
 | `src/assets/projects/now-1440.png` | Capture of https://cuaca.bijan.app/ on 2026-09-29, Now view, 1440×900 CSS px at 2× DPR. Astro creates top-aligned WebP derivatives. | Cuaca, created by Najib Ninaba. Visible linked caption: "Captured 29 Sep 2026 from cuaca.bijan.app". |
-| `src/assets/projects/repoprompt-agent-new-session.webp` | Downloaded from https://repoprompt.com/images/agent-new-session.webp on 2026-09-29 (source 2584×1794). Astro creates top-aligned 16:9 WebP derivatives. | © Repo Prompt, used with attribution. Visible linked caption: "Screenshot © Repo Prompt, repoprompt.com". |
+| `src/assets/projects/repoprompt-agent-new-session.webp` | Downloaded from https://repoprompt.com/images/agent-new-session.webp on 2026-09-29 (source 2584×1794). Astro creates top-aligned 16:10 WebP thumbnail derivatives. | © Repo Prompt, used with attribution. Visible linked caption: "Screenshot © Repo Prompt, repoprompt.com". |
 
 The Orchard source provenance comes from the prior content-build thread ([T-01a0ec44](https://ampcode.com/threads/T-01a0ec44-ab92-75bd-8c23-51fc3823baba)). Its source checkout commit was not recorded.

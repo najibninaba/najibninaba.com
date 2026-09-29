@@ -32,12 +32,14 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 				<ul class="projects">
 					{projects.map(project => <li>
 						<figure>
-							<div class="preview"><Image src={project.screenshot} alt={project.screenshotAlt} width={1360} height={765} widths={[400, 680, 1000, 1360]} sizes="(min-width: 1040px) 680px, (min-width: 768px) calc(100vw - 280px), calc(100vw - 48px)" format="webp" fit="cover" position="top" loading="lazy" /></div>
+							<div class="preview"><Image src={project.screenshot} alt={project.screenshotAlt} width={384} height={240} widths={[192, 384]} sizes="192px" format="webp" fit="cover" position="top" loading="lazy" /></div>
 							{project.caption && <figcaption>{project.caption} <a href={project.captionUrl}>{project.captionLink}</a></figcaption>}
 						</figure>
-						<div class="project-heading"><h3>{project.url ? <a href={project.url}>{project.name}</a> : project.name}</h3><span>{project.role} · {project.status}{project.license && ` · ${project.license}`}</span></div>
-						<p class="project-description">{project.description} {project.url && project.details[0]}</p>
-						{project.url && <p class="project-link"><a href={project.url}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a></p>}
+						<div class="project-copy">
+							<div class="project-heading"><h3>{project.url ? <a href={project.url}>{project.name}</a> : project.name}</h3><span>{project.role} · {project.status}{project.license && ` · ${project.license}`}</span></div>
+							<p class="project-description">{project.description} {project.url && project.details[0]}</p>
+							{project.url && <p class="project-link"><a href={project.url}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a></p>}
+						</div>
 					</li>)}
 				</ul>
 			</section>
@@ -94,9 +96,10 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 	.roles { margin-top: 16px; max-width: 52ch; font-size: 16px; line-height: 1.55; color: var(--ink-3); text-wrap: pretty; }
 	.intro { display: grid; gap: 20px; margin-top: 40px; max-width: 60ch; font-size: 16px; line-height: 1.7; color: var(--ink-2); }
 	h2 { margin-bottom: 24px; font-size: 13px; font-weight: 500; color: var(--ink-3); }
-	.projects { display: grid; gap: 56px; }
+	.projects { display: grid; gap: 40px; }
+	.projects li { display: grid; grid-template-columns: 192px minmax(0, 1fr); column-gap: 24px; align-items: start; }
 	.preview { overflow: hidden; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper-2); }
-	.preview img { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; filter: brightness(var(--screenshot-brightness, 1)); transition: transform 500ms cubic-bezier(.16,1,.3,1), filter 200ms ease-out; }
+	.preview img { display: block; width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; filter: brightness(var(--screenshot-brightness, 1)); transition: transform 500ms cubic-bezier(.16,1,.3,1), filter 200ms ease-out; }
 	:global([data-theme='dark']) .projects { --screenshot-brightness: .88; }
 	@media (prefers-color-scheme: dark) {
 		:global(html:not([data-theme='light'])) .projects { --screenshot-brightness: .88; }
@@ -104,7 +107,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 	.projects li:hover .preview img, .projects li:focus-within .preview img { filter: brightness(1); }
 	.projects li:hover .preview img { transform: scale(1.015); }
 	figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-3); }
-	.project-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; margin-top: 20px; }
+	.project-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; }
 	h3 { font-size: 18px; font-weight: 500; letter-spacing: -.015em; }
 	h3 a { text-decoration: none; }
 	.project-heading > span { color: var(--ink-3); font-size: 13px; }
@@ -133,6 +136,10 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 		.rail { position: static; display: flex; align-items: center; justify-content: space-between; padding-top: 0; }
 		.rail nav { display: none; }
 		.theme { margin-top: 0; }
+	}
+	@media (max-width: 600px) {
+		.projects li { grid-template-columns: minmax(0, 1fr); row-gap: 16px; }
+		.projects figure { width: 192px; }
 	}
 	@media (max-width: 420px) {
 		.writing a, .experience li { grid-template-columns: 90px minmax(0, 1fr); column-gap: 14px; }
