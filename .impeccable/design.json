@@ -127,31 +127,31 @@
       "paper-dark": {
         "role": "neutral",
         "displayName": "Paper (dark)",
-        "canonical": "oklch(16.9% 0.002 286)",
+        "canonical": "oklch(16.8% 0.002 107)",
         "tonalRamp": [
-          "oklch(15% 0.004 286)",
-          "oklch(26% 0.004 286)",
-          "oklch(38% 0.004 286)",
-          "oklch(50% 0.004 286)",
-          "oklch(62% 0.004 286)",
-          "oklch(74% 0.004 286)",
-          "oklch(85% 0.004 286)",
-          "oklch(95% 0.004 286)"
+          "oklch(15% 0.004 107)",
+          "oklch(26% 0.004 107)",
+          "oklch(38% 0.004 107)",
+          "oklch(50% 0.004 107)",
+          "oklch(62% 0.004 107)",
+          "oklch(74% 0.004 107)",
+          "oklch(85% 0.004 107)",
+          "oklch(95% 0.004 107)"
         ]
       },
       "paper-2-dark": {
         "role": "neutral",
         "displayName": "Shelf (dark)",
-        "canonical": "oklch(21.0% 0.004 286)",
+        "canonical": "oklch(20.8% 0.004 107)",
         "tonalRamp": [
-          "oklch(15% 0.004 286)",
-          "oklch(26% 0.004 286)",
-          "oklch(38% 0.004 286)",
-          "oklch(50% 0.004 286)",
-          "oklch(62% 0.004 286)",
-          "oklch(74% 0.004 286)",
-          "oklch(85% 0.004 286)",
-          "oklch(95% 0.004 286)"
+          "oklch(15% 0.004 107)",
+          "oklch(26% 0.004 107)",
+          "oklch(38% 0.004 107)",
+          "oklch(50% 0.004 107)",
+          "oklch(62% 0.004 107)",
+          "oklch(74% 0.004 107)",
+          "oklch(85% 0.004 107)",
+          "oklch(95% 0.004 107)"
         ]
       },
       "ink-dark": {
@@ -202,16 +202,16 @@
       "rule-dark": {
         "role": "neutral",
         "displayName": "Hairline (dark)",
-        "canonical": "oklch(26.1% 0.004 286)",
+        "canonical": "oklch(26.0% 0.004 107)",
         "tonalRamp": [
-          "oklch(15% 0.004 286)",
-          "oklch(26% 0.004 286)",
-          "oklch(38% 0.004 286)",
-          "oklch(50% 0.004 286)",
-          "oklch(62% 0.004 286)",
-          "oklch(74% 0.004 286)",
-          "oklch(85% 0.004 286)",
-          "oklch(95% 0.004 286)"
+          "oklch(15% 0.004 107)",
+          "oklch(26% 0.004 107)",
+          "oklch(38% 0.004 107)",
+          "oklch(50% 0.004 107)",
+          "oklch(62% 0.004 107)",
+          "oklch(74% 0.004 107)",
+          "oklch(85% 0.004 107)",
+          "oklch(95% 0.004 107)"
         ]
       },
       "accent-dark": {
@@ -359,6 +359,11 @@
     ]
   },
   "components": [
+    {
+      "name": "Site icon",
+      "kind": "custom",
+      "description": "Text-only NN monogram in outlined Geist Medium on Paper with Ink lettering and a 6px corner radius. The SVG follows prefers-color-scheme; the 180×180 Apple touch icon and 32×32 ICO fallback use the light palette. No photo."
+    },
     {
       "name": "Social card",
       "kind": "custom",

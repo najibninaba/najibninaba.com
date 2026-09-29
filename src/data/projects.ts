@@ -1,8 +1,8 @@
 import type { ImageMetadata } from 'astro';
 // Existing project-owned screenshots supplied for this site; see DESIGN.md for provenance.
-import orchardScreenshot from '../../public/projects/orchard/playground-inference.webp';
+import orchardScreenshot from '../assets/projects/playground-inference.webp';
 // https://cuaca.bijan.app/ — Now view captured 2026-09-29, 1440×900 at 2× DPR.
-import cuacaScreenshot from '../../public/projects/cuaca/now-1440.png';
+import cuacaScreenshot from '../assets/projects/now-1440.png';
 // https://repoprompt.com/images/agent-new-session.webp — downloaded 2026-09-29.
 // © Repo Prompt, used with attribution
 import repopromptScreenshot from '../assets/projects/repoprompt-agent-new-session.webp';
@@ -23,11 +23,6 @@ export type Project = {
   url?: string;
   siteUrl?: string;
   demoUrl?: string;
-  logo?: string;
-  images?: Array<{
-    src: string;
-    alt: string;
-  }>;
 };
 
 export const projects: Project[] = [
@@ -47,13 +42,6 @@ export const projects: Project[] = [
     license: 'Apache-2.0',
     url: 'https://github.com/kapitan-ai/orchard',
     demoUrl: 'https://youtu.be/lChCSLT3ra8',
-    logo: '/projects/orchard/orchard-mark.svg',
-    images: [
-      {
-        src: '/projects/orchard/playground-inference.webp',
-        alt: 'Orchard Playground showing a completed local inference request',
-      },
-    ],
   },
   {
     name: 'Cuaca',
@@ -71,13 +59,6 @@ export const projects: Project[] = [
       'Uses an edge-cached last-known-good snapshot through upstream outages. Built with React 19, Vite, Effect, Cloudflare Workers and D1 as an installable PWA.',
     ],
     status: 'Live · PWA',
-    logo: '/projects/cuaca/cuaca-mark-neutral.svg',
-    images: [
-      {
-        src: '/projects/cuaca/now-1440.png',
-        alt: 'Cuaca neighbourhood forecast view showing Singapore forecast areas',
-      },
-    ],
   },
   {
     name: 'RepoPrompt CE',

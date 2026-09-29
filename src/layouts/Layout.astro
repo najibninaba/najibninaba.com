@@ -27,6 +27,8 @@ const person = {
 		<meta name="description" content={site.description} />
 		<link rel="canonical" href={url} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 		<link rel="preload" href={textFont} as="font" type="font/woff2" crossorigin />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={site.description} />
@@ -54,20 +56,14 @@ const person = {
 
 <style is:global>
 	:root {
-		--paper: #fcfcfb; --paper-2: #f4f4f2; --ink: #151515; --ink-2: #555552;
-		--ink-3: #6f6f6b; --rule: #e6e6e3; --accent: #1a56c4; --sel: #d9e5fb;
-		--underline-offset: .22em; color-scheme: light;
+		--paper: light-dark(#fcfcfb, #0f0f0e); --paper-2: light-dark(#f4f4f2, #181816);
+		--ink: light-dark(#151515, #ececea); --ink-2: light-dark(#555552, #a8a8a4);
+		--ink-3: light-dark(#6f6f6b, #8b8b87); --rule: light-dark(#e6e6e3, #242422);
+		--accent: light-dark(#1a56c4, #8fb3ff); --sel: light-dark(#d9e5fb, #23365c);
+		--underline-offset: .22em; color-scheme: light dark;
 	}
-	:root[data-theme='dark'] {
-		--paper: #0f0f10; --paper-2: #18181a; --ink: #ececea; --ink-2: #a8a8a4;
-		--ink-3: #8b8b87; --rule: #242426; --accent: #8fb3ff; --sel: #23365c; color-scheme: dark;
-	}
-	@media (prefers-color-scheme: dark) {
-		:root:not([data-theme='light']) {
-			--paper: #0f0f10; --paper-2: #18181a; --ink: #ececea; --ink-2: #a8a8a4;
-			--ink-3: #8b8b87; --rule: #242426; --accent: #8fb3ff; --sel: #23365c; color-scheme: dark;
-		}
-	}
+	:root[data-theme='light'] { color-scheme: light; }
+	:root[data-theme='dark'] { color-scheme: dark; }
 	* { box-sizing: border-box; }
 	html { background: var(--paper); scrollbar-color: var(--ink-3) var(--paper); }
 	body { margin: 0; color: var(--ink); font-family: Geist, ui-sans-serif, system-ui, sans-serif; line-height: 1.5; -webkit-font-smoothing: antialiased; font-feature-settings: 'ss01'; }
