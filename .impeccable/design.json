@@ -1,0 +1,490 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T00:00:00Z",
+  "title": "Design System: Najib Ninaba",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(99.1% 0.001 106)",
+        "tonalRamp": [
+          "oklch(15% 0.004 106)",
+          "oklch(26% 0.004 106)",
+          "oklch(38% 0.004 106)",
+          "oklch(50% 0.004 106)",
+          "oklch(62% 0.004 106)",
+          "oklch(74% 0.004 106)",
+          "oklch(85% 0.004 106)",
+          "oklch(95% 0.004 106)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Shelf",
+        "canonical": "oklch(96.7% 0.003 106)",
+        "tonalRamp": [
+          "oklch(15% 0.004 106)",
+          "oklch(26% 0.004 106)",
+          "oklch(38% 0.004 106)",
+          "oklch(50% 0.004 106)",
+          "oklch(62% 0.004 106)",
+          "oklch(74% 0.004 106)",
+          "oklch(85% 0.004 106)",
+          "oklch(95% 0.004 106)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(19.6% 0 90)",
+        "tonalRamp": [
+          "oklch(15% 0.004 106)",
+          "oklch(26% 0.004 106)",
+          "oklch(38% 0.004 106)",
+          "oklch(50% 0.004 106)",
+          "oklch(62% 0.004 106)",
+          "oklch(74% 0.004 106)",
+          "oklch(85% 0.004 106)",
+          "oklch(95% 0.004 106)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(44.9% 0.005 107)",
+        "tonalRamp": [
+          "oklch(15% 0.006 107)",
+          "oklch(26% 0.006 107)",
+          "oklch(38% 0.006 107)",
+          "oklch(50% 0.006 107)",
+          "oklch(62% 0.006 107)",
+          "oklch(74% 0.006 107)",
+          "oklch(85% 0.006 107)",
+          "oklch(95% 0.006 107)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Pencil",
+        "canonical": "oklch(54.0% 0.006 107)",
+        "tonalRamp": [
+          "oklch(15% 0.006 107)",
+          "oklch(26% 0.006 107)",
+          "oklch(38% 0.006 107)",
+          "oklch(50% 0.006 107)",
+          "oklch(62% 0.006 107)",
+          "oklch(74% 0.006 107)",
+          "oklch(85% 0.006 107)",
+          "oklch(95% 0.006 107)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(92.4% 0.004 106)",
+        "tonalRamp": [
+          "oklch(15% 0.004 106)",
+          "oklch(26% 0.004 106)",
+          "oklch(38% 0.004 106)",
+          "oklch(50% 0.004 106)",
+          "oklch(62% 0.004 106)",
+          "oklch(74% 0.004 106)",
+          "oklch(85% 0.004 106)",
+          "oklch(95% 0.004 106)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Cobalt Focus",
+        "canonical": "oklch(48.5% 0.183 261)",
+        "tonalRamp": [
+          "oklch(15% 0.15 261)",
+          "oklch(26% 0.15 261)",
+          "oklch(38% 0.15 261)",
+          "oklch(50% 0.15 261)",
+          "oklch(62% 0.15 261)",
+          "oklch(74% 0.15 261)",
+          "oklch(85% 0.15 261)",
+          "oklch(95% 0.15 261)"
+        ]
+      },
+      "selection": {
+        "role": "primary",
+        "displayName": "Highlight",
+        "canonical": "oklch(92.0% 0.033 263)",
+        "tonalRamp": [
+          "oklch(15% 0.05 263)",
+          "oklch(26% 0.05 263)",
+          "oklch(38% 0.05 263)",
+          "oklch(50% 0.05 263)",
+          "oklch(62% 0.05 263)",
+          "oklch(74% 0.05 263)",
+          "oklch(85% 0.05 263)",
+          "oklch(95% 0.05 263)"
+        ]
+      },
+      "paper-dark": {
+        "role": "neutral",
+        "displayName": "Paper (dark)",
+        "canonical": "oklch(16.9% 0.002 286)",
+        "tonalRamp": [
+          "oklch(15% 0.004 286)",
+          "oklch(26% 0.004 286)",
+          "oklch(38% 0.004 286)",
+          "oklch(50% 0.004 286)",
+          "oklch(62% 0.004 286)",
+          "oklch(74% 0.004 286)",
+          "oklch(85% 0.004 286)",
+          "oklch(95% 0.004 286)"
+        ]
+      },
+      "paper-2-dark": {
+        "role": "neutral",
+        "displayName": "Shelf (dark)",
+        "canonical": "oklch(21.0% 0.004 286)",
+        "tonalRamp": [
+          "oklch(15% 0.004 286)",
+          "oklch(26% 0.004 286)",
+          "oklch(38% 0.004 286)",
+          "oklch(50% 0.004 286)",
+          "oklch(62% 0.004 286)",
+          "oklch(74% 0.004 286)",
+          "oklch(85% 0.004 286)",
+          "oklch(95% 0.004 286)"
+        ]
+      },
+      "ink-dark": {
+        "role": "neutral",
+        "displayName": "Ink (dark)",
+        "canonical": "oklch(94.3% 0.003 106)",
+        "tonalRamp": [
+          "oklch(15% 0.004 106)",
+          "oklch(26% 0.004 106)",
+          "oklch(38% 0.004 106)",
+          "oklch(50% 0.004 106)",
+          "oklch(62% 0.004 106)",
+          "oklch(74% 0.004 106)",
+          "oklch(85% 0.004 106)",
+          "oklch(95% 0.004 106)"
+        ]
+      },
+      "ink-2-dark": {
+        "role": "neutral",
+        "displayName": "Graphite (dark)",
+        "canonical": "oklch(73.0% 0.006 107)",
+        "tonalRamp": [
+          "oklch(15% 0.006 107)",
+          "oklch(26% 0.006 107)",
+          "oklch(38% 0.006 107)",
+          "oklch(50% 0.006 107)",
+          "oklch(62% 0.006 107)",
+          "oklch(74% 0.006 107)",
+          "oklch(85% 0.006 107)",
+          "oklch(95% 0.006 107)"
+        ]
+      },
+      "ink-3-dark": {
+        "role": "neutral",
+        "displayName": "Pencil (dark)",
+        "canonical": "oklch(63.6% 0.006 107)",
+        "tonalRamp": [
+          "oklch(15% 0.006 107)",
+          "oklch(26% 0.006 107)",
+          "oklch(38% 0.006 107)",
+          "oklch(50% 0.006 107)",
+          "oklch(62% 0.006 107)",
+          "oklch(74% 0.006 107)",
+          "oklch(85% 0.006 107)",
+          "oklch(95% 0.006 107)"
+        ]
+      },
+      "rule-dark": {
+        "role": "neutral",
+        "displayName": "Hairline (dark)",
+        "canonical": "oklch(26.1% 0.004 286)",
+        "tonalRamp": [
+          "oklch(15% 0.004 286)",
+          "oklch(26% 0.004 286)",
+          "oklch(38% 0.004 286)",
+          "oklch(50% 0.004 286)",
+          "oklch(62% 0.004 286)",
+          "oklch(74% 0.004 286)",
+          "oklch(85% 0.004 286)",
+          "oklch(95% 0.004 286)"
+        ]
+      },
+      "accent-dark": {
+        "role": "primary",
+        "displayName": "Cobalt Focus (dark)",
+        "canonical": "oklch(77.0% 0.116 264)",
+        "tonalRamp": [
+          "oklch(15% 0.12 264)",
+          "oklch(26% 0.12 264)",
+          "oklch(38% 0.12 264)",
+          "oklch(50% 0.12 264)",
+          "oklch(62% 0.12 264)",
+          "oklch(74% 0.12 264)",
+          "oklch(85% 0.12 264)",
+          "oklch(95% 0.12 264)"
+        ]
+      },
+      "selection-dark": {
+        "role": "primary",
+        "displayName": "Highlight (dark)",
+        "canonical": "oklch(33.7% 0.072 263)",
+        "tonalRamp": [
+          "oklch(15% 0.07 263)",
+          "oklch(26% 0.07 263)",
+          "oklch(38% 0.07 263)",
+          "oklch(50% 0.07 263)",
+          "oklch(62% 0.07 263)",
+          "oklch(74% 0.07 263)",
+          "oklch(85% 0.07 263)",
+          "oklch(95% 0.07 263)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The thesis only; the one large line on the page."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project names."
+      },
+      "name": {
+        "displayName": "Name",
+        "purpose": "The h1 name at the top of the column."
+      },
+      "body-lead": {
+        "displayName": "Body lead",
+        "purpose": "First-person intro, in Graphite, max 60ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Project descriptions, writing and experience rows."
+      },
+      "body-small": {
+        "displayName": "Body small",
+        "purpose": "Role lines, rail links, experience summaries; bio copy uses a 14.5px/1.7 variant."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Section headings, in Pencil."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Project role and status, captions, URLs, copy buttons, footer."
+      },
+      "mono-date": {
+        "displayName": "Mono date",
+        "purpose": "Post dates and experience year ranges only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Entrance rise, screenshot zoom and theme-icon rotation."
+      },
+      {
+        "name": "rise",
+        "value": "700ms, translateY(6px) + blur(3px) to rest, 70ms stagger per step",
+        "purpose": "The single load-in entrance; only under prefers-reduced-motion: no-preference."
+      },
+      {
+        "name": "screenshot-zoom",
+        "value": "transform scale(1.015) over 500ms",
+        "purpose": "Project preview hover."
+      },
+      {
+        "name": "theme-rotate",
+        "value": "rotate(180deg) over 320ms",
+        "purpose": "Theme toggle icon when dark is active."
+      },
+      {
+        "name": "state-fast",
+        "value": "150–200ms",
+        "purpose": "Rail link colour (150ms), rail dot fade and scale (200ms), screenshot brightness (200ms ease-out)."
+      },
+      {
+        "name": "row-hover",
+        "value": "160ms ease-out",
+        "purpose": "Writing row background and date colour."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none",
+        "purpose": "All motion removed under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow",
+        "value": "max-width: 420px"
+      },
+      {
+        "name": "bio-stack",
+        "value": "max-width: 639px / min-width: 640px"
+      },
+      {
+        "name": "rail-collapse",
+        "value": "max-width: 767px"
+      },
+      {
+        "name": "frame",
+        "value": "1040px max width"
+      }
+    ],
+    "effects": [
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px",
+        "purpose": "Every :focus-visible element."
+      },
+      {
+        "name": "link-underline",
+        "value": "1px, color-mix(in oklab, var(--ink) 25%, transparent), offset .22em (--underline-offset)",
+        "purpose": "Default link decoration; full currentColor on hover."
+      },
+      {
+        "name": "screenshot-dim-dark",
+        "value": "filter: brightness(.88)",
+        "purpose": "Project screenshots in dark mode, restored on hover or focus-within."
+      },
+      {
+        "name": "scrollbar",
+        "value": "scrollbar-color: var(--ink-3) var(--paper)",
+        "purpose": "Themed page scrollbar."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Index Rail",
+      "kind": "nav",
+      "refersTo": "rail-link",
+      "description": "Sticky section index; the accent dot marks the current section.",
+      "html": "<nav class=\"ds-rail\"><ul><li><a href=\"#\" aria-current=\"location\"><span></span>About</a></li><li><a href=\"#\"><span></span>Projects</a></li><li><a href=\"#\"><span></span>Writing</a></li><li><a href=\"#\"><span></span>Experience</a></li><li><a href=\"#\"><span></span>Bio &amp; headshot</a></li></ul></nav>",
+      "css": ".ds-rail ul { margin: 0; padding: 0; list-style: none; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-rail li + li { margin-top: 8px; } .ds-rail a { display: flex; align-items: center; gap: 10px; min-height: 24px; font-size: 14px; color: var(--ink-3, #6f6f6b); text-decoration: none; transition: color 150ms; } .ds-rail a:hover, .ds-rail a[aria-current] { color: var(--ink, #151515); } .ds-rail a:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; } .ds-rail a span { width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #1a56c4); opacity: 0; transform: scale(.4); transition: opacity 200ms, transform 200ms; } .ds-rail a[aria-current] span { opacity: 1; transform: scale(1); }"
+    },
+    {
+      "name": "Theme Toggle",
+      "kind": "button",
+      "refersTo": "theme-toggle",
+      "description": "32px round icon button; the filled half rotates 180° in dark mode.",
+      "html": "<button type=\"button\" class=\"ds-theme-toggle\" aria-label=\"Switch to dark theme\" aria-pressed=\"false\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"8\" cy=\"8\" r=\"6.25\" stroke=\"currentColor\" stroke-width=\"1.25\"/><path d=\"M8 1.75a6.25 6.25 0 0 1 0 12.5z\" fill=\"currentColor\"/></svg></button>",
+      "css": ".ds-theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 0; border-radius: 50%; background: none; color: var(--ink-3, #6f6f6b); cursor: pointer; } .ds-theme-toggle:hover { background: var(--paper-2, #f4f4f2); color: var(--ink, #151515); } .ds-theme-toggle:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; } .ds-theme-toggle path { transform-origin: 8px 8px; transition: transform 320ms cubic-bezier(.16,1,.3,1); } .ds-theme-toggle[aria-pressed='true'] path { transform: rotate(180deg); }"
+    },
+    {
+      "name": "Outbound Link",
+      "kind": "custom",
+      "description": "Ink link with a 25%-ink hairline underline under the text only, then an up-right arrow.",
+      "html": "<a class=\"ds-link-out\" href=\"#\"><span>kapitan-ai/orchard</span><svg width=\"11\" height=\"11\" viewBox=\"0 0 11 11\" fill=\"none\" aria-hidden=\"true\" style=\"display:inline-block;margin-left:3px;transform:translateY(-1px)\"><path d=\"M3 8l5-5M4 3h4v4\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-link-out { font-family: Geist, ui-sans-serif, system-ui, sans-serif; font-size: 13px; color: var(--ink-2, #555552); text-decoration: none; } .ds-link-out span { text-decoration: underline 1px color-mix(in oklab, var(--ink, #151515) 25%, transparent); text-underline-offset: .22em; } .ds-link-out:hover span { text-decoration-color: currentColor; } .ds-link-out:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; }"
+    },
+    {
+      "name": "Copy Button",
+      "kind": "button",
+      "refersTo": "copy-button",
+      "description": "Hairline-bordered text button in the bio panel; shows Copied with a check for 1.8s.",
+      "html": "<button type=\"button\" class=\"ds-copy\"><span>Copy short bio</span><svg width=\"12\" height=\"12\" viewBox=\"0 0 12 12\" aria-hidden=\"true\"><rect x=\"3.5\" y=\"3.5\" width=\"6\" height=\"6\" rx=\"1.2\" stroke=\"currentColor\" stroke-width=\"1.1\" fill=\"none\"/><path d=\"M2.5 8V3.2c0-.4.3-.7.7-.7H8\" stroke=\"currentColor\" stroke-width=\"1.1\" fill=\"none\"/></svg></button>",
+      "css": ".ds-copy { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; padding: 3px 10px; border: 1px solid var(--rule, #e6e6e3); border-radius: 6px; background: none; font: 400 13px Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink-2, #555552); cursor: pointer; } .ds-copy:hover { border-color: var(--ink-3, #6f6f6b); color: var(--ink, #151515); } .ds-copy:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; }"
+    },
+    {
+      "name": "Writing Row",
+      "kind": "custom",
+      "refersTo": "writing-row",
+      "description": "Mono date column plus title; the whole row is a link that takes the Shelf tint on hover.",
+      "html": "<ul class=\"ds-writing\"><li><a href=\"#\"><time>4 Mar 2026</time><span>Agent-Ready Platforms Break on Docs First</span></a></li><li><a href=\"#\"><time>2 Mar 2026</time><span>Jevons' Paradox and the Two-Track Talent Split</span></a></li></ul>",
+      "css": ".ds-writing { margin: 0; padding: 0 12px; list-style: none; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-writing li + li { border-top: 1px solid var(--rule, #e6e6e3); } .ds-writing a { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 16px; margin-inline: -12px; padding: 10px 12px; border-radius: 6px; font-size: 15.5px; color: var(--ink, #151515); text-decoration: none; transition: background-color 160ms ease-out; } .ds-writing time { padding-top: 2px; font-family: 'Geist Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--ink-3, #6f6f6b); transition: color 160ms ease-out; } .ds-writing a:hover, .ds-writing a:focus-visible { background: var(--paper-2, #f4f4f2); } .ds-writing a:hover time, .ds-writing a:focus-visible time { color: var(--ink-2, #555552); } .ds-writing a:hover span, .ds-writing a:focus-visible span { text-decoration: underline; text-decoration-color: var(--ink-3, #6f6f6b); text-underline-offset: .22em; } .ds-writing a:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; }"
+    },
+    {
+      "name": "Project Entry",
+      "kind": "card",
+      "refersTo": "project-preview",
+      "description": "Framed 16:9 screenshot, name with role and status on one baseline, Graphite description.",
+      "html": "<article class=\"ds-project\"><div class=\"ds-project-preview\"><div class=\"ds-project-shot\"></div></div><div class=\"ds-project-head\"><h3><a href=\"#\">Orchard</a></h3><span>Creator · Pre-release pilot · Apache-2.0</span></div><p>Sovereign on-premises LLM orchestration that turns a fleet of Apple Silicon Macs into one OpenAI-compatible service.</p></article>",
+      "css": ".ds-project { max-width: 680px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-project-preview { overflow: hidden; border: 1px solid var(--rule, #e6e6e3); border-radius: 12px; background: var(--paper-2, #f4f4f2); } .ds-project-shot { aspect-ratio: 16/9; background: var(--rule, #e6e6e3); transition: transform 500ms cubic-bezier(.16,1,.3,1); } .ds-project:hover .ds-project-shot { transform: scale(1.015); } .ds-project-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 24px; margin-top: 20px; } .ds-project h3 { margin: 0; font-size: 18px; font-weight: 500; letter-spacing: -.015em; } .ds-project h3 a { color: var(--ink, #151515); text-decoration: none; } .ds-project h3 a:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; } .ds-project-head span { font-size: 13px; color: var(--ink-3, #6f6f6b); } .ds-project p { margin: 8px 0 0; max-width: 60ch; font-size: 15.5px; line-height: 1.65; color: var(--ink-2, #555552); }"
+    },
+    {
+      "name": "Experience Row",
+      "kind": "custom",
+      "description": "Mono year range, Ink title with Pencil organisation, Pencil summary; hairline between rows.",
+      "html": "<ol class=\"ds-exp\"><li><span>2018–now</span><div><p>Head of Platforms Engineering<span class=\"ds-org\"> · AI Singapore</span></p><p class=\"ds-sum\">Leads Platforms Engineering across hybrid infrastructure.</p></div></li><li><span>2017</span><div><p>Data Engineering Architect<span class=\"ds-org\"> · NUS SCALE</span></p><p class=\"ds-sum\">Lectured in data analytics and chatbots.</p></div></li></ol>",
+      "css": ".ds-exp { margin: 0; padding: 0; list-style: none; font-family: Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink, #151515); } .ds-exp li { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 16px; padding: 12px 0; font-size: 15.5px; line-height: 1.6; } .ds-exp li + li { border-top: 1px solid var(--rule, #e6e6e3); } .ds-exp li > span { padding-top: 2px; font-family: 'Geist Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; font-size: 12.5px; color: var(--ink-3, #6f6f6b); white-space: nowrap; } .ds-exp p { margin: 0; } .ds-org, .ds-sum { color: var(--ink-3, #6f6f6b); } .ds-sum { margin-top: 2px !important; font-size: 14px; line-height: 1.55; }"
+    },
+    {
+      "name": "Bio Panel",
+      "kind": "card",
+      "refersTo": "bio-panel",
+      "description": "The only tinted panel: portrait with download link beside copy buttons and bio text.",
+      "html": "<div class=\"ds-bio\"><div class=\"ds-bio-portrait\"><div class=\"ds-bio-img\"></div><a href=\"#\">Download</a></div><div><p>Najib Ninaba is Head of Platforms Engineering at AI Singapore and Senior Associate Director at Nanyang Technological University.</p><button type=\"button\">Show long bio</button></div></div>",
+      "css": ".ds-bio { display: grid; grid-template-columns: 132px 1fr; gap: 32px; padding: 24px; background: var(--paper-2, #f4f4f2); border-radius: 12px; font-family: Geist, ui-sans-serif, system-ui, sans-serif; } .ds-bio-img { aspect-ratio: 4/5; border-radius: 8px; background: var(--rule, #e6e6e3); } .ds-bio-portrait a { display: inline-block; margin-top: 10px; font-size: 13px; color: var(--ink-2, #555552); text-decoration: underline 1px color-mix(in oklab, var(--ink, #151515) 25%, transparent); text-underline-offset: .22em; } .ds-bio p { margin: 0; font-size: 14.5px; line-height: 1.7; color: var(--ink-2, #555552); } .ds-bio button { margin-top: 12px; padding: 0; border: 0; background: none; font: 400 13px Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink-3, #6f6f6b); cursor: pointer; } .ds-bio button:hover { color: var(--ink, #151515); } .ds-bio a:focus-visible, .ds-bio button:focus-visible { outline: 2px solid var(--accent, #1a56c4); outline-offset: 3px; border-radius: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Index Card",
+    "overview": "The site is a minimal engineer's homepage, done straight: one reading column of plain facts next to a small sticky index of the sections. Type does all the ranking. There is one large line on the page (the thesis). Everything else sits between 12.5px and 18px, and weight, grey step and spacing do the rest of the work. Near-white paper, near-black ink, three greys and a hairline. The single blue accent is almost never seen: it marks keyboard focus and the active section in the rail, and nothing else.\n\nDensity is low and the measure is short. Sections are separated by whitespace instead of rules. Hairlines appear only between rows of a list. Project screenshots are the only images of any size, and they sit in quiet 12px frames rather than cards. The dark theme is a separate palette with its own values, not an inversion of the light one.\n\nMotion is limited to a single entrance: blocks rise 6px out of a 3px blur on load, and hover and state changes are 150 to 500ms. All of it stops under `prefers-reduced-motion`.",
+    "keyCharacteristics": [
+      "One column (at most 680px) beside a 168px sticky rail, centred in a 1040px frame.",
+      "Hierarchy through size, weight 500 against 400, and a three-step grey text ladder.",
+      "Accent reserved for focus and the active-section dot; links stay ink-coloured.",
+      "Flat throughout: no shadows or gradients, and depth only through one tinted surface (`paper-2`).",
+      "Geist for all text, Geist Mono with tabular figures only for dates and year ranges.",
+      "Paired light and dark palettes, following the system preference by default with a stored manual override."
+    ],
+    "rules": [
+      {
+        "name": "The Ink Link Rule",
+        "body": "Links are ink (inherited colour) with a 1px underline mixed from ink at 25%, which turns to full `currentColor` on hover. The accent never colours a link.",
+        "section": "colors"
+      },
+      {
+        "name": "The Grey Ladder Rule",
+        "body": "Text uses exactly three steps, ink, ink-2 and ink-3. Add emphasis with weight or size, not with a fourth grey.",
+        "section": "colors"
+      },
+      {
+        "name": "The Dimmed Screenshot Rule",
+        "body": "In dark mode, project screenshots sit at `brightness(.88)` and return to full brightness on hover or focus within the item.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Loud Line Rule",
+        "body": "Only the thesis goes above 18px. Section headings are small, and space and position set them apart.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Is For Time Rule",
+        "body": "Geist Mono is used only for dates and year ranges, always with tabular figures.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "Surfaces never cast shadows. Separate things with the Shelf tint, a 1px hairline or whitespace.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep all text in the Ink, Graphite and Pencil steps, and create emphasis with weight 500 or size.",
+      "**Do** reserve the accent for the focus ring (2px solid, 3px offset) and the active rail dot.",
+      "**Do** separate sections with 96px of space and list rows with 1px hairlines.",
+      "**Do** frame screenshots at 16:9, top-aligned, with a hairline border and a 12px radius, and dim them to 0.88 brightness in dark mode.",
+      "**Do** set dates and year ranges in Geist Mono at 12.5px with tabular figures.",
+      "**Do** define every new colour in both the light and the dark palette.",
+      "**Do** keep interactive targets at least 24px tall."
+    ],
+    "donts": [
+      "**Don't** add box shadows or gradients.",
+      "**Don't** colour links, buttons or surfaces with the accent.",
+      "**Don't** set any text other than the thesis above 18px.",
+      "**Don't** use Geist Mono for labels, metadata or body text.",
+      "**Don't** add a fourth text grey or a heavier font weight than 500.",
+      "**Don't** put project entries or list rows in bordered or tinted cards at rest. The Shelf panel is kept for the bio block; rows get the tint only on hover or focus."
+    ]
+  }
+}
