@@ -38,7 +38,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 						</figure>
 						<div class="project-heading"><h3>{project.url ? <a href={project.url}>{project.name}</a> : project.name}</h3><span>{project.role} · {project.status}{project.license && ` · ${project.license}`}</span></div>
 						<p class="project-description">{project.description} {project.url && project.details[0]}</p>
-						{project.url && <p class="project-link"><a href={project.url}>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')} <ArrowUpRight /></a></p>}
+						{project.url && <p class="project-link"><a href={project.url}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a></p>}
 					</li>)}
 				</ul>
 			</section>
@@ -51,7 +51,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 				<ol class="experience">{site.experiences.map(item => <li><span class="mono period">{item.period}</span><div><p>{item.title}{item.org && <span class="org"> · {item.org}</span>}</p><p class="summary">{item.summary}</p></div></li>)}</ol>
 			</section>
 			<section id="bio" aria-labelledby="bio-heading"><h2 id="bio-heading">Bio &amp; headshot</h2><Bio /></section>
-			<footer><span>Singapore</span><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href}>{link.label} <ArrowUpRight /></a>)}</nav></footer>
+			<footer><span>Singapore</span><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href}><span>{link.label}</span><ArrowUpRight /></a>)}</nav></footer>
 		</main>
 	</div>
 	<script is:inline>
@@ -112,9 +112,11 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 	.project-heading > span { color: var(--ink-3); font-size: 13px; }
 	.project-description { margin-top: 8px; max-width: 60ch; color: var(--ink-2); font-size: 15.5px; line-height: 1.65; }
 	.project-link { margin-top: 12px; color: var(--ink-2); font-size: 13px; }
+	.project-link a { text-decoration-line: none; }
+	.project-link a > span, footer a > span { text-decoration-line: underline; text-decoration-color: inherit; text-decoration-thickness: inherit; text-underline-offset: var(--underline-offset); }
 	.writing li + li, .experience li + li { border-top: 1px solid var(--rule); }
 	.writing a, .experience li { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 16px; padding: 10px 0; font-size: 15.5px; }
-	.writing a { text-decoration: none; margin-inline: -12px; padding-inline: 12px; transition: background-color 160ms ease-out; }
+	.writing a { text-decoration: none; margin-inline: -12px; padding-inline: 12px; border-radius: 6px; transition: background-color 160ms ease-out; }
 	.writing a:hover, .writing a:focus-visible { background: var(--paper-2); }
 	.writing time { transition: color 160ms ease-out; }
 	.writing a:hover time, .writing a:focus-visible time { color: var(--ink-2); }
@@ -126,7 +128,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 	.summary { margin-top: 2px; font-size: 14px; line-height: 1.55; }
 	footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 13px; }
 	footer nav { display: flex; gap: 20px; }
-	footer a { text-decoration: none; min-height: 24px; }
+	footer a { text-decoration-line: none; min-height: 24px; }
 	footer a:hover { color: var(--ink); }
 	@media (max-width: 767px) {
 		.frame { grid-template-columns: minmax(0, 1fr); row-gap: 40px; }
