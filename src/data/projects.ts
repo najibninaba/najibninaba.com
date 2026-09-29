@@ -1,6 +1,20 @@
+import type { ImageMetadata } from 'astro';
+// Existing project-owned screenshots supplied for this site; see DESIGN.md for provenance.
+import orchardScreenshot from '../../public/projects/orchard/playground-inference.webp';
+// https://cuaca.bijan.app/ — Now view captured 2026-09-29, 1440×900 at 2× DPR.
+import cuacaScreenshot from '../../public/projects/cuaca/now-1440.png';
+// https://repoprompt.com/images/agent-new-session.webp — downloaded 2026-09-29.
+// © Repo Prompt, used with attribution
+import repopromptScreenshot from '../assets/projects/repoprompt-agent-new-session.webp';
+
 export type Project = {
   name: string;
   role: string;
+  screenshot: ImageMetadata;
+  screenshotAlt: string;
+  caption?: string;
+  captionLink?: string;
+  captionUrl?: string;
   pitch?: string;
   description: string;
   details: string[];
@@ -20,6 +34,8 @@ export const projects: Project[] = [
   {
     name: 'Orchard',
     role: 'Creator',
+    screenshot: orchardScreenshot,
+    screenshotAlt: 'Orchard Playground showing a completed local inference request',
     pitch: 'Your LLMs. Your hardware. Your rules.',
     description:
       'Sovereign on-premises LLM orchestration that turns a fleet of Apple Silicon Macs into one OpenAI-compatible service.',
@@ -42,13 +58,19 @@ export const projects: Project[] = [
   {
     name: 'Cuaca',
     role: 'Creator',
+    screenshot: cuacaScreenshot,
+    screenshotAlt: 'Cuaca Now view showing air quality and weather for Pasir Ris',
+    caption: 'Captured 29 Sep 2026 from',
+    captionLink: 'cuaca.bijan.app',
+    captionUrl: 'https://cuaca.bijan.app',
+    url: 'https://cuaca.bijan.app',
     description:
       'A Singapore neighbourhood weather and haze briefing built only on official data.gov.sg feeds.',
     details: [
       'Covers two-hour forecasts for all 47 forecast areas, official PSI and PM2.5 readings, and a separately labelled US AQI computed with EPA NowCast.',
       'Uses an edge-cached last-known-good snapshot through upstream outages. Built with React 19, Vite, Effect, Cloudflare Workers and D1 as an installable PWA.',
     ],
-    status: 'Private, not launched',
+    status: 'Live · PWA',
     logo: '/projects/cuaca/cuaca-mark-neutral.svg',
     images: [
       {
@@ -60,6 +82,12 @@ export const projects: Project[] = [
   {
     name: 'RepoPrompt CE',
     role: 'Contributor & reviewer',
+    screenshot: repopromptScreenshot,
+    screenshotAlt: 'RepoPrompt CE agent session window with the chat list, the workflow tips and the Codex CLI model selector',
+    caption: 'Screenshot © Repo Prompt,',
+    captionLink: 'repoprompt.com',
+    captionUrl: 'https://repoprompt.com',
+    status: 'Open source · macOS',
     description:
       'A free, open-source native macOS context-engineering app with a bundled MCP server for AI coding agents.',
     details: [

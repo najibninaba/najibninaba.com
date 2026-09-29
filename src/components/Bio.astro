@@ -1,0 +1,66 @@
+---
+import { site, bio } from '../data/site';
+const copies = [
+	{ label: 'Copy title', text: `${site.name}, ${site.title}` },
+	{ label: 'Copy short bio', text: bio.short },
+	{ label: 'Copy long bio', text: bio.long.join('\n\n') },
+];
+---
+<div class="bio-block">
+	<div>
+		<div class="copy-buttons" hidden>
+			{copies.map(copy => <button type="button" data-copy={copy.text}><span aria-live="polite">{copy.label}</span><svg class="copy-icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="3.5" y="3.5" width="6" height="6" rx="1.2" stroke="currentColor" stroke-width="1.1" fill="none" /><path d="M2.5 8V3.2c0-.4.3-.7.7-.7H8" stroke="currentColor" stroke-width="1.1" fill="none" /></svg><svg class="check-icon" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.2 2.2L9.5 3.5" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round" /></svg></button>)}
+		</div>
+		<div class="bio-copy" id="short-bio"><p>{bio.short}</p></div>
+		<details id="long-bio">
+			<summary>Read the long bio</summary>
+			<div class="bio-copy">{bio.long.map(paragraph => <p>{paragraph}</p>)}</div>
+		</details>
+		<button type="button" class="bio-toggle" aria-expanded="false" aria-controls="long-bio" hidden>Show long bio</button>
+	</div>
+</div>
+<script is:inline>
+	(() => {
+		const block = document.currentScript.previousElementSibling;
+		const short = block.querySelector('#short-bio');
+		const long = block.querySelector('#long-bio');
+		const toggle = block.querySelector('.bio-toggle');
+		long.open = true;
+		long.hidden = true;
+		long.querySelector('summary').hidden = true;
+		toggle.hidden = false;
+		toggle.addEventListener('click', () => {
+			const expanded = toggle.getAttribute('aria-expanded') !== 'true';
+			toggle.setAttribute('aria-expanded', String(expanded));
+			toggle.textContent = expanded ? 'Show short bio' : 'Show long bio';
+			short.hidden = expanded;
+			long.hidden = !expanded;
+		});
+		if (!navigator.clipboard?.writeText) return;
+		block.querySelector('.copy-buttons').hidden = false;
+		block.querySelectorAll('[data-copy]').forEach(button => {
+			const label = button.querySelector('span');
+			const original = label.textContent;
+			let timer;
+			button.addEventListener('click', async () => {
+				try { await navigator.clipboard.writeText(button.dataset.copy); label.textContent = 'Copied'; button.classList.add('copied'); }
+				catch { label.textContent = 'Select and copy'; button.classList.remove('copied'); }
+				clearTimeout(timer);
+				timer = setTimeout(() => { label.textContent = original; button.classList.remove('copied'); }, 1800);
+			});
+		});
+	})();
+</script>
+<style>
+	.bio-block { padding: 24px; background: var(--paper-2); border-radius: 12px; }
+	.copy-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+	.copy-buttons button { display: inline-flex; align-items: center; gap: 6px; min-height: 28px; border: 1px solid var(--rule); border-radius: 6px; padding: 3px 10px; font-size: 13px; color: var(--ink-2); }
+	.copy-buttons button:hover { border-color: var(--ink-3); color: var(--ink); }
+	.check-icon, .copied .copy-icon { display: none; }
+	.copied .check-icon { display: inline; }
+	.bio-copy { display: grid; gap: 12px; color: var(--ink-2); font-size: 14.5px; line-height: 1.7; }
+	summary, .bio-toggle { margin-top: 12px; min-height: 24px; font-size: 13px; color: var(--ink-3); border: 0; padding: 0; }
+	.bio-toggle:hover { color: var(--ink); }
+	details .bio-copy { margin-top: 12px; }
+	details[open]:has(summary[hidden]) .bio-copy { margin-top: 0; }
+</style>
