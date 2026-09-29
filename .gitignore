@@ -151,3 +151,6 @@ storybook-static
 # Temporary files
 *.tmp
 *.temp
+
+# Amp orb runtime data
+.amp/portals/*

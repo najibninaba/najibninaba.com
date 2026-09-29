@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$repo_root"
+
+step() {
+	local label="$1"
+	shift
+	local started=$SECONDS
+	echo "==> $label"
+	"$@"
+	echo "<== $label ($((SECONDS - started))s)"
+}
+
+node_version="$(tr -d '[:space:]' < .nvmrc)"
+node_major="${node_version%%.*}"
+current_node_major="$(node --version 2>/dev/null | cut -d. -f1 | tr -d v || true)"
+
+if [[ "$current_node_major" != "$node_major" ]]; then
+	if ! command -v n >/dev/null 2>&1; then
+		step "Install Node version manager" npm install --global n@10.2.0
+	fi
+	step "Install Node.js $node_version" n "$node_version"
+	hash -r
+fi
+
+pnpm_version="10.17.1"
+current_pnpm_version="$(pnpm --version 2>/dev/null || true)"
+
+if [[ "$current_pnpm_version" != "$pnpm_version" ]]; then
+	step "Install pnpm $pnpm_version" npm install --global "pnpm@$pnpm_version"
+	hash -r
+fi
+
+step "Install dependencies" env CI=true pnpm install --frozen-lockfile
