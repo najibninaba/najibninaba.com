@@ -32,7 +32,7 @@ export const site: SiteContent = {
     {
       title: 'Head of Platforms Engineering · Senior Associate Director',
       org: 'AI Singapore · NTU',
-      period: 'January 2018–Present',
+      period: '2018–now',
       summary:
         'Joined AI Singapore under NUS as one of its original four engineers. Leads Platforms Engineering across hybrid infrastructure, GPU and HPC capacity, MLOps foundations, data platforms, and reliability practices. Became Senior Associate Director at NTU when AI Singapore transitioned from NUS to NTU in April 2026.',
     },
@@ -46,26 +46,26 @@ export const site: SiteContent = {
     {
       title: 'Data Engineering Architect',
       org: 'NUS School of Continuing and Lifelong Education',
-      period: 'April–December 2017',
+      period: '2017',
       summary:
         'Lectured in data analytics, data engineering, reproducible data science, and chatbots.',
     },
     {
       title: 'Co-Founder',
       org: 'Real Analytics',
-      period: 'June 2016–December 2017',
+      period: '2016–2017',
       summary: 'Worked on data analytics, data engineering, consulting, and training.',
     },
     {
       title: 'Development Manager',
       org: 'Revolution Analytics',
-      period: 'January 2012–June 2014',
+      period: '2012–2014',
       summary: 'Built and led a Singapore engineering team working on cloud and analytics infrastructure.',
     },
     {
       title: 'Development Manager',
       org: 'Platform Computing',
-      period: 'July 2006–June 2010',
+      period: '2006–2010',
       summary: 'Built an engineering team in Singapore working on distributed computing and HPC systems.',
     },
     {
@@ -76,7 +76,7 @@ export const site: SiteContent = {
     },
     {
       title: 'Early Linux HPC and Rocks work',
-      period: 'Around 2000 onward',
+      period: '~2000',
       summary:
         'Built early Linux HPC clusters in Singapore and contributed cluster tooling and packaging to the Rocks ecosystem.',
     },

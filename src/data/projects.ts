@@ -12,7 +12,8 @@ export type Project = {
   role: string;
   screenshot: ImageMetadata;
   screenshotAlt: string;
-  caption: string;
+  caption?: string;
+  captionLink?: string;
   captionUrl?: string;
   pitch?: string;
   description: string;
@@ -35,7 +36,6 @@ export const projects: Project[] = [
     role: 'Creator',
     screenshot: orchardScreenshot,
     screenshotAlt: 'Orchard Playground showing a completed local inference request',
-    caption: 'Orchard Console',
     pitch: 'Your LLMs. Your hardware. Your rules.',
     description:
       'Sovereign on-premises LLM orchestration that turns a fleet of Apple Silicon Macs into one OpenAI-compatible service.',
@@ -60,7 +60,8 @@ export const projects: Project[] = [
     role: 'Creator',
     screenshot: cuacaScreenshot,
     screenshotAlt: 'Cuaca Now view showing air quality and weather for Pasir Ris',
-    caption: 'cuaca.bijan.app',
+    caption: 'Captured 29 Sep 2026 from',
+    captionLink: 'cuaca.bijan.app',
     captionUrl: 'https://cuaca.bijan.app',
     url: 'https://cuaca.bijan.app',
     description:
@@ -83,7 +84,8 @@ export const projects: Project[] = [
     role: 'Contributor & reviewer',
     screenshot: repopromptScreenshot,
     screenshotAlt: 'RepoPrompt CE agent session window with the chat list, the workflow tips and the Codex CLI model selector',
-    caption: 'repoprompt.com',
+    caption: 'Screenshot © Repo Prompt,',
+    captionLink: 'repoprompt.com',
     captionUrl: 'https://repoprompt.com',
     status: 'Open source · macOS',
     description:
