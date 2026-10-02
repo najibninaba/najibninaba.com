@@ -234,7 +234,7 @@ The only layered effect is the load-in blur; project screenshots brighten on hov
 Corners are soft and graded by object size: 12px for desktop screenshot frames and the bio panel, 8px for narrow-column thumbnails, 6px for small controls and row hovers (copy buttons, writing rows) and 3px on the focus ring.
 Identity and icon marks are fully round: the avatar, the rail dot and the theme toggle.
 Borders are always 1px hairlines.
-Screenshots are cropped to 16:10 from the top.
+Project screenshots use purpose-cropped 16:10 thumbnails, with framing chosen for each project and recorded in the crop provenance.
 
 ## Components
 
