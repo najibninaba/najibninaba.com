@@ -201,7 +201,7 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 
 ## Layout
 
-A centred 1040px frame with 24px side padding, a top padding of `clamp(3rem, 11vh, 7.5rem)` and 96px at the bottom. It holds a two-column grid: a 168px rail and a `minmax(0, 1fr)` column capped at 680px, with a 64px gap. The rail is sticky at `clamp(24px, 6vh, 56px)` from the top. From top to bottom it holds a 36px round avatar, the section nav 40px below it (items 8px apart, at least 24px tall) and the theme toggle 40px below that.
+A centred 1040px frame with 24px side padding, a top padding of `clamp(3rem, 11vh, 7.5rem)` and 96px at the bottom. It holds a two-column grid: a 168px rail and a `minmax(0, 1fr)` column capped at 680px, with a 64px gap. The rail is sticky at `clamp(24px, 6vh, 56px)` from the top. From top to bottom it holds a 72px round avatar, the section nav 40px below it (items 8px apart, at least 24px tall) and the theme toggle 40px below that.
 
 Vertical rhythm: 96px between sections, and 96px before the footer, which has a hairline above it.
 Within the About block the role line sits 16px below the name and the intro 40px below the role line.
@@ -212,7 +212,7 @@ Writing and experience rows share a two-column grid: a 104px date column, a 16px
 Rows are padded 10px (writing) or 12px (experience).
 
 Breakpoints:
-- **767px and below:** one column with a 40px row gap. The rail turns into a static top bar with the avatar on the left and the theme toggle on the right, and the section nav is hidden.
+- **767px and below:** one column with a 40px row gap. The rail turns into a static top bar with a 56px avatar on the left and the theme toggle on the right, and the section nav is hidden.
 - **Projects list under 600px wide:** entries use a 112px thumbnail beside the heading, regardless of viewport width; this covers the 768–840px tablet band when the rail narrows the reading column.
 - **420px and below:** the date column narrows to 90px with a 14px gap.
 
@@ -307,7 +307,8 @@ All generated responsive WebP derivatives inherit their source's attribution. Pr
 
 | Asset | Source and handling | Attribution |
 | --- | --- | --- |
-| `public/profile.png` | Existing user-supplied portrait. Used for the avatar and social image. Astro creates resized WebP derivatives. The photographer and creation date are not recorded. | Portrait supplied by Najib Ninaba; no additional rights claim made. |
+| `public/profile.png` | Original user-supplied portrait, retained as the source used by the existing social image. The photographer and creation date are not recorded. | Portrait supplied by Najib Ninaba; no additional rights claim made. |
+| `src/assets/profile-enhanced.png` | GPT Images enhancement of Najib's supplied outdoor photograph, generated and approved on 2026-10-02. The avatar uses a face-centered circular crop: 1.3× scale, 6% rightward translation, and a 50% 30% transform origin; 72px desktop and 56px at 767px and below. Astro emits responsive WebP derivatives sized for the magnified crop. Preview and generation provenance are recorded in the adjacent JSON sidecar. | AI-enhanced portrait based on Najib Ninaba's supplied photograph. |
 | `public/apple-touch-icon.png`, `public/favicon.ico` | Rendered from the outlined Geist Medium `NN` monogram in `public/favicon.svg` on 2026-09-29. Provenance is recorded in adjacent JSON sidecars because `impeccable embed-prompt` was unavailable. | Site-owned monogram; no photo or third-party artwork. |
 | `src/assets/projects/playground-inference.webp` | From `kapitan-ai/orchard`, `docs/media/playground-inference.png`, imported on 2026-09-29 and retained as the original. | © 2026 AI Singapore, Orchard repository material under its Apache-2.0 documentation terms. |
 | `src/assets/projects/playground-inference-thumb.webp` | Cropped 640×400 at +800+340 from the Orchard original to show the completed transcript and request bar; WebP quality 86. | Inherits the Orchard source attribution. |
