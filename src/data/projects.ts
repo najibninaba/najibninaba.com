@@ -1,16 +1,20 @@
 import type { ImageMetadata } from 'astro';
 // Existing project-owned screenshots supplied for this site; see DESIGN.md for provenance.
 import orchardScreenshot from '../assets/projects/playground-inference.webp';
+import orchardThumbnail from '../assets/projects/playground-inference-thumb.webp';
 // https://cuaca.bijan.app/ — Now view captured 2026-09-29, 1440×900 at 2× DPR.
 import cuacaScreenshot from '../assets/projects/now-1440.png';
+import cuacaThumbnail from '../assets/projects/now-1440-thumb.webp';
 // https://repoprompt.com/images/agent-new-session.webp — downloaded 2026-09-29.
 // © Repo Prompt, used with attribution
 import repopromptScreenshot from '../assets/projects/repoprompt-agent-new-session.webp';
+import repopromptThumbnail from '../assets/projects/repoprompt-agent-new-session-thumb.webp';
 
 export type Project = {
   name: string;
   role: string;
   screenshot: ImageMetadata;
+  thumbnail: ImageMetadata;
   screenshotAlt: string;
   caption?: string;
   captionLink?: string;
@@ -30,7 +34,8 @@ export const projects: Project[] = [
     name: 'Orchard',
     role: 'Creator',
     screenshot: orchardScreenshot,
-    screenshotAlt: 'Orchard Playground showing a completed local inference request',
+    thumbnail: orchardThumbnail,
+    screenshotAlt: 'Orchard Playground transcript showing a completed local inference request',
     pitch: 'Your LLMs. Your hardware. Your rules.',
     description:
       'Sovereign on-premises LLM orchestration that turns a fleet of Apple Silicon Macs into one OpenAI-compatible service.',
@@ -47,10 +52,9 @@ export const projects: Project[] = [
     name: 'Cuaca',
     role: 'Creator',
     screenshot: cuacaScreenshot,
-    screenshotAlt: 'Cuaca Now view showing air quality and weather for Pasir Ris',
-    caption: 'Captured 29 Sep 2026 from',
-    captionLink: 'cuaca.bijan.app',
-    captionUrl: 'https://cuaca.bijan.app',
+    thumbnail: cuacaThumbnail,
+    screenshotAlt: 'Cuaca Now view showing the air quality headline and PSI reading for Pasir Ris',
+    caption: 'Captured 29 Sep 2026',
     url: 'https://cuaca.bijan.app',
     description:
       'A Singapore neighbourhood weather and haze briefing built only on official data.gov.sg feeds.',
@@ -64,9 +68,9 @@ export const projects: Project[] = [
     name: 'RepoPrompt CE',
     role: 'Contributor & reviewer',
     screenshot: repopromptScreenshot,
-    screenshotAlt: 'RepoPrompt CE agent session window with the chat list, the workflow tips and the Codex CLI model selector',
-    caption: 'Screenshot © Repo Prompt,',
-    captionLink: 'repoprompt.com',
+    thumbnail: repopromptThumbnail,
+    screenshotAlt: 'RepoPrompt CE agent session window showing the chat list and workflow tips',
+    captionLink: '© Repo Prompt',
     captionUrl: 'https://repoprompt.com',
     status: 'Open source · macOS',
     description:
