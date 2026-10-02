@@ -36,7 +36,7 @@ Static Astro site on GitHub Pages at najibninaba.com. Content is hand-curated in
 - Name as written: "Najib Ninaba".
 - Role order: Head of Platforms Engineering, AI Singapore first; Senior Associate Director, NTU second (Najib, 2026-09-29).
 - No downloadable headshot. Najib does not provide headshots for organisers (2026-09-29).
-- Assets on hand: `public/profile.png` (casual headshot).
+- Assets on hand: `public/profile.png` (original casual headshot) and `src/assets/profile-enhanced.png` (GPT Images enhancement approved 2026-10-02). The face-centered avatar is 72px on desktop and 56px on mobile.
 - Visual direction (standing preference, chosen 2026-09-29): the category standard played straight, a minimal engineer's homepage with no themed metaphor. The craft bar comes from paco.me, rauno.me, leerob.com, brianlovin.com, mitchellh.com and simonwillison.net: typography first, restrained, precise interaction details, writing and projects as clean lists, and polished light/dark themes.
 - Projects stay text-first: names align with the reading column's left edge, while small, purposeful screenshot crops support the copy on the right, including on phones.
 

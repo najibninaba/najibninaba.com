@@ -1,0 +1,12 @@
+{
+  "source": "Najib Ninaba supplied portrait",
+  "processing": "GPT Images enhancement",
+  "generatedDate": "2026-10-02",
+  "approvedDate": "2026-10-02",
+  "sha256": "9a123946b8b4be0d6101494caed71af9e249df32c5151250c4c2aaca6d337f1a",
+  "preview": "https://designs.magicpath.ai/v1/wondrous-road-5253",
+  "previewRevisionId": "456603581588602880",
+  "crop": {"scale": 1.3, "translateX": "6%", "transformOrigin": "50% 30%", "desktop": 72, "mobile": 56, "mobileMaxWidth": 767},
+  "promptSummary": "Preserve identity, expression, clothing and coastal setting; restore natural clarity and create a square head-and-shoulders portrait.",
+  "attribution": "AI-enhanced portrait based on Najib Ninaba's supplied photograph; no additional rights claim made."
+}
