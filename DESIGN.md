@@ -301,6 +301,10 @@ Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on
 - **Don't** add a fourth text grey or a heavier font weight than 500.
 - **Don't** put project entries or list rows in bordered or tinted cards at rest. The Shelf panel is kept for the bio block; rows get the tint only on hover or focus.
 
+## Diagrams
+
+Diagrams made with the diagram-design skill use the `najibninaba` profile, selected by the `.diagram-design` marker at the repo root (`~/.diagram-design/profiles/najibninaba.md`). The profile maps Paper, Shelf, Ink, Graphite (`muted`), Pencil (`soft`) and the cobalt accent from this file into the skill's roles, in both themes. Inside a diagram the skill's own rules apply: Geist Mono for technical sublabels, and the accent on at most two focal elements.
+
 ## Raster provenance
 
 All generated responsive WebP derivatives inherit their source's attribution. Project screenshot sources live under `src/assets/projects/`, so Astro emits only the optimized derivatives used by the page.
