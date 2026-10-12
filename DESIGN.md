@@ -303,7 +303,7 @@ Blocks marked to rise animate from 6px below with 3px blur to rest over 700ms on
 
 ## Diagrams
 
-Diagrams made with the diagram-design skill use the `najibninaba` profile, selected by the `.diagram-design` marker at the repo root (`~/.diagram-design/profiles/najibninaba.md`). The profile maps Paper, Shelf, Ink, Graphite (`muted`), Pencil (`soft`) and the cobalt accent from this file into the skill's roles, in both themes. Inside a diagram the skill's own rules apply: Geist Mono for technical sublabels, and the accent on at most two focal elements.
+Diagrams made with the diagram-design skill use the `najibninaba` profile, selected by the `.diagram-design` marker at the repo root (`~/.diagram-design/profiles/najibninaba.md`). The profile maps Paper, Shelf, Ink, Graphite (`muted`), Pencil (`soft`) and the cobalt accent from this file into the skill's roles, in both themes. Diagram titles use Geist 500, HTTP/API arrows use a neutral grey so the cobalt accent stays the only hue, and the accent marks at most two focal elements. Geist Mono is allowed inside diagrams for technical sublabels.
 
 ## Raster provenance
 
