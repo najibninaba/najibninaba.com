@@ -104,4 +104,5 @@ export const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/najibninaba' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/najibninaba/' },
   { label: 'X', href: 'https://x.com/najibninaba' },
+  { label: 'Talks', href: 'https://talks.bijan.app' },
 ];
