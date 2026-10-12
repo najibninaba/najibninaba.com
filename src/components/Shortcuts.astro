@@ -21,8 +21,8 @@ const shortcuts = [
 </dialog>
 <script is:inline>
 	(() => {
-		const dialog = document.currentScript.previousElementSibling;
-		const hint = dialog.previousElementSibling;
+		const dialog = document.getElementById('shortcuts');
+		const hint = document.querySelector('.shortcuts-hint');
 		const links = () => [...document.querySelectorAll('.rail nav a')];
 		const toggle = () => dialog.open ? dialog.close() : dialog.showModal();
 		let last;
