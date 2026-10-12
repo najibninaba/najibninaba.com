@@ -1,0 +1,78 @@
+---
+const sections = ['About', 'Projects', 'Writing', 'Experience', 'Bio'];
+const shortcuts = [
+	{ keys: ['T'], label: 'Switch light or dark theme' },
+	{ keys: ['1', '5'], range: true, label: sections.join(', ') },
+	{ keys: ['J', 'K'], label: 'Next or previous section' },
+	{ keys: ['?'], label: 'Show or hide this list' },
+];
+---
+<button type="button" class="shortcuts-hint" aria-haspopup="dialog" aria-controls="shortcuts" hidden>Shortcuts <kbd>?</kbd></button>
+<dialog id="shortcuts" aria-labelledby="shortcuts-title">
+	<div class="shortcuts-panel" tabindex="-1" autofocus>
+		<div class="shortcuts-head">
+			<h2 id="shortcuts-title">Keyboard shortcuts</h2>
+			<button type="button" class="shortcuts-close">Close</button>
+		</div>
+		<dl>
+			{shortcuts.map(shortcut => <div><dt>{shortcut.range ? <><kbd>{shortcut.keys[0]}</kbd>–<kbd>{shortcut.keys[1]}</kbd></> : shortcut.keys.map((key, i) => <>{i > 0 && ' '}<kbd>{key}</kbd></>)}</dt><dd>{shortcut.label}</dd></div>)}
+		</dl>
+	</div>
+</dialog>
+<script is:inline>
+	(() => {
+		const dialog = document.getElementById('shortcuts');
+		const hint = document.querySelector('.shortcuts-hint');
+		const links = () => [...document.querySelectorAll('.rail nav a')];
+		const toggle = () => dialog.open ? dialog.close() : dialog.showModal();
+		let last;
+		const go = index => {
+			const link = links()[index];
+			if (!link) return;
+			link.click();
+			last = { index, y: scrollY };
+		};
+		// The rail marks the current section a frame after scrolling, so trust the last jump until the reader scrolls.
+		const current = () => last?.y === scrollY ? last.index : Math.max(0, links().findIndex(link => link.hasAttribute('aria-current')));
+		const typing = target => target.closest?.('input, textarea, select, [contenteditable]:not([contenteditable="false"])');
+		hint.hidden = false;
+		hint.addEventListener('click', toggle);
+		dialog.querySelector('.shortcuts-close').addEventListener('click', () => dialog.close());
+		dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+		addEventListener('keydown', event => {
+			if (event.defaultPrevented || event.isComposing || event.metaKey || event.ctrlKey || event.altKey || typing(event.target)) return;
+			const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+			if (key === '?') toggle();
+			else if (dialog.open) return;
+			else if (key === 't') document.querySelector('.theme-toggle')?.click();
+			else if (/^[1-5]$/.test(key)) go(Number(key) - 1);
+			else if (key === 'j') go(Math.min(current() + 1, links().length - 1));
+			else if (key === 'k') go(Math.max(current() - 1, 0));
+			else return;
+			event.preventDefault();
+		});
+	})();
+</script>
+<style>
+	.shortcuts-hint { display: inline-flex; align-items: center; gap: 6px; min-height: 24px; border: 0; padding: 0; font-size: 13px; color: var(--ink-3); transition: color 150ms; }
+	.shortcuts-hint:hover { color: var(--ink); }
+	@media not ((hover: hover) and (pointer: fine)) { .shortcuts-hint { display: none; } }
+	kbd { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; border: 1px solid var(--rule); border-radius: 4px; font: 500 12px/1 Geist, ui-sans-serif, system-ui, sans-serif; color: var(--ink-2); }
+	dialog { width: min(380px, calc(100% - 32px)); padding: 0; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper); color: var(--ink); }
+	.shortcuts-panel { padding: 24px; }
+	.shortcuts-panel:focus { outline: none; }
+	dialog::backdrop { background: color-mix(in oklab, var(--paper) 72%, transparent); }
+	.shortcuts-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+	h2 { font-size: 13px; font-weight: 500; color: var(--ink-3); }
+	.shortcuts-close { min-height: 24px; border: 0; padding: 0; font-size: 13px; color: var(--ink-3); transition: color 150ms; }
+	.shortcuts-close:hover { color: var(--ink); }
+	dl { margin: 0; }
+	dl div { display: grid; grid-template-columns: 72px minmax(0, 1fr); column-gap: 16px; align-items: baseline; padding: 10px 0; }
+	dl div + div { border-top: 1px solid var(--rule); }
+	dt { display: flex; align-items: center; gap: 4px; color: var(--ink-3); font-size: 13px; }
+	dd { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink-2); }
+	@media (prefers-reduced-motion: no-preference) {
+		dialog[open] { animation: shortcuts-in 200ms cubic-bezier(.16,1,.3,1); }
+		@keyframes shortcuts-in { from { opacity: 0; transform: translateY(4px); } }
+	}
+</style>

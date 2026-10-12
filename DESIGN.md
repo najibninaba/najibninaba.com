@@ -273,6 +273,11 @@ A quiet table of contents that follows the reader.
 - **Copy buttons:** transparent, with a 1px hairline border, 6px radius, 28px minimum height, 13px Graphite text and a 12px copy icon. On hover the border darkens to Pencil and the text turns Ink. On success the label reads "Copied" with a check icon for 1.8s. They appear only when the Clipboard API exists.
 - **Short and long toggle:** a 13px Pencil text button. Without JavaScript, the long bio falls back to a native `details` element.
 
+### Keyboard Shortcuts
+- **Keys:** `T` switches the theme through the theme toggle. `1`–`5` jump to the rail sections in order, and `J` and `K` move to the next or previous section. `?` opens or closes the list. They are single keys with no modifiers, ignored inside form fields and whenever Cmd, Ctrl or Alt is held.
+- **List:** a native modal `dialog` in Paper with a 1px hairline border, 12px radius and 24px padding, over a 72% Paper backdrop. It has no shadow. Rows follow the list-row pattern: a 72px key column, 14px Graphite labels and hairlines between rows. Keys are 20px Geist caps with a hairline border and 4px radius. Focus lands on the panel without a ring. `Esc`, the Close button or a click on the backdrop closes it.
+- **Hint:** a 13px Pencil "Shortcuts ?" button beside "Singapore" in the footer. It appears only with JavaScript and only on hover-capable fine pointers, so phones don't show it.
+
 ### Social card
 Text-only `public/og.png`, rendered in Chromium at 1200×630 (1×) with self-hosted Geist. Paper background, Ink name (80px Medium, 1.08 line-height, -0.03em tracking); Pencil role lines (30px) and Geist Mono domain (22px). Left inset is 80px. No photo, logo, icons or gradient.
 

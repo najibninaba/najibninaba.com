@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
 import Bio from '../components/Bio.astro';
 import ArrowUpRight from '../components/ArrowUpRight.astro';
+import Shortcuts from '../components/Shortcuts.astro';
 import profile from '../assets/profile-enhanced.png';
 import { site, intro, socialLinks } from '../data/site';
 import { projects } from '../data/projects';
@@ -50,7 +51,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 				<ol class="experience">{site.experiences.map(item => <li><span class="mono period">{item.period}</span><div><p>{item.title}{item.org && <span class="org"> · {item.org}</span>}</p><p class="summary">{item.summary}</p></div></li>)}</ol>
 			</section>
 			<section id="bio" aria-labelledby="bio-heading"><h2 id="bio-heading">Bio</h2><Bio /></section>
-			<footer><span>Singapore</span><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href}><span>{link.label}</span><ArrowUpRight /></a>)}</nav></footer>
+			<footer><div class="footer-meta"><span>Singapore</span><Shortcuts /></div><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href}><span>{link.label}</span><ArrowUpRight /></a>)}</nav></footer>
 		</main>
 	</div>
 	<script is:inline>
@@ -127,6 +128,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 	.org, .summary { color: var(--ink-3); }
 	.summary { margin-top: 2px; font-size: 14px; line-height: 1.55; }
 	footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 96px; padding-top: 24px; border-top: 1px solid var(--rule); color: var(--ink-3); font-size: 13px; }
+	.footer-meta { display: flex; align-items: center; gap: 20px; }
 	footer nav { display: flex; gap: 20px; }
 	footer a { text-decoration-line: none; min-height: 24px; }
 	footer a:hover { color: var(--ink); }
