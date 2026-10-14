@@ -189,7 +189,7 @@ A warm-neutral paper-and-ink palette with one cobalt accent that almost never ap
 - **Body** (400, 15.5px, line-height 1.65, max 60ch): project descriptions and writing and experience rows.
 - **Role line** (400, 16px, line-height 1.55, max 52ch, Pencil): the roles under the name, 16px below it.
 - **Body small** (400, 14px, line-height 1.6): rail links and experience summaries (line-height 1.55). Bio copy is a 14.5px variant at line-height 1.7.
-- **Label** (500, 13px, Pencil): the section headings (Projects, Writing, Experience, Bio).
+- **Label** (500, 13px, Pencil): the section headings (Projects, Talks, Writing, Experience, Bio).
 - **Meta** (400, 13px): project role and status lines, desktop captions, project URLs, copy buttons and the footer.
 - **Small caption** (400, 11px): one-line thumbnail credits below 600px of Projects-list width.
 - **Mono date** (Geist Mono, 12.5px, tabular figures, Pencil): post dates and experience year ranges.
@@ -263,6 +263,12 @@ A quiet table of contents that follows the reader.
   The heading starts at the reading column's left edge, with its cap height aligned to the thumbnail top.
 - **Body:** a 15.5px Graphite description, then the bare URL in the outbound link style.
 
+### Talk Entry
+Talks reuse the Project Entry layout, newest first, in a section between Projects and Writing.
+- **Preview:** a 16:10 crop of the deck's title slide, framed like a project thumbnail.
+- **Heading row:** the talk title in Title style, linked to the deck. Beneath it in 13px Pencil: the event and city, then the date in Geist Mono.
+- **Body:** a short Graphite description of what the talk covers, then a row of outbound links 16px apart: Slides, PDF, Recording when one exists, and Event.
+
 ### List Rows (Writing, Experience)
 - **Structure:** a mono date column and a text column, divided by 1px hairlines between rows (none above the first row).
 - **Writing hover and focus:** the whole row is a link. It bleeds 12px into the margin on each side and gets the Shelf fill with a 6px radius (160ms). The date darkens to Graphite and the title gets a Pencil underline.
@@ -274,7 +280,7 @@ A quiet table of contents that follows the reader.
 - **Short and long toggle:** a 13px Pencil text button. Without JavaScript, the long bio falls back to a native `details` element.
 
 ### Keyboard Shortcuts
-- **Keys:** `T` switches the theme through the theme toggle. `1`–`5` jump to the rail sections in order, and `J` and `K` move to the next or previous section. `?` opens or closes the list. They are single keys with no modifiers, ignored inside form fields and whenever Cmd, Ctrl or Alt is held.
+- **Keys:** `T` switches the theme through the theme toggle. Number keys jump to the rail sections in order (`1`–`6` today), and `J` and `K` move to the next or previous section. `?` opens or closes the list. They are single keys with no modifiers, ignored inside form fields and whenever Cmd, Ctrl or Alt is held.
 - **List:** a native modal `dialog` in Paper with a 1px hairline border, 12px radius and 24px padding, over a 72% Paper backdrop. It has no shadow. Rows follow the list-row pattern: a 72px key column, 14px Graphite labels and hairlines between rows. Keys are 20px Geist caps with a hairline border and 4px radius. Focus lands on the panel without a ring. `Esc`, the Close button or a click on the backdrop closes it.
 - **Hint:** a 13px Pencil "Shortcuts ?" button beside "Singapore" in the footer. It appears only with JavaScript and only on hover-capable fine pointers, so phones don't show it.
 
@@ -325,5 +331,6 @@ All generated responsive WebP derivatives inherit their source's attribution. Pr
 | `src/assets/projects/now-1440-thumb.webp` | Cropped 2200×1375 at +150+200 from the Cuaca original to keep the Pasir Ris air-quality headline and PSI reading; WebP quality 86. | Cuaca, created by Najib Ninaba. Visible plain caption: "Captured 29 Sep 2026". |
 | `src/assets/projects/repoprompt-agent-new-session.webp` | Downloaded from https://repoprompt.com/images/agent-new-session.webp on 2026-09-29 (source 2584×1794) and retained as the original. | © Repo Prompt, used with attribution. |
 | `src/assets/projects/repoprompt-agent-new-session-thumb.webp` | Cropped 1920×1200 at +90+45 from the RepoPrompt original to show the agent window without wallpaper; WebP quality 86. | © Repo Prompt, used with attribution. Visible linked caption: "© Repo Prompt" at https://repoprompt.com. |
+| `src/assets/talks/2026-10-14-lorong-ai-thumb.webp` | Title slide of https://talks.bijan.app/2026-10-14-lorong-ai/, rendered in headless Chrome at 1600×1000 and 2× DPR on 2026-10-14. Cropped 2304×1440 at +144+328 to drop the letterbox bars, resized to 1280×800, WebP quality 86. | © 2026 Najib Ninaba, from his own deck. |
 
 The Orchard source provenance comes from the prior content-build thread ([T-01a0ec44](https://ampcode.com/threads/T-01a0ec44-ab92-75bd-8c23-51fc3823baba)). Its source checkout commit was not recorded.

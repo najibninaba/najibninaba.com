@@ -1,8 +1,8 @@
 ---
-const sections = ['About', 'Projects', 'Writing', 'Experience', 'Bio'];
+const { sections } = Astro.props as { sections: string[] };
 const shortcuts = [
 	{ keys: ['T'], label: 'Switch light or dark theme' },
-	{ keys: ['1', '5'], range: true, label: sections.join(', ') },
+	{ keys: ['1', String(sections.length)], range: true, label: sections.join(', ') },
 	{ keys: ['J', 'K'], label: 'Next or previous section' },
 	{ keys: ['?'], label: 'Show or hide this list' },
 ];
@@ -45,7 +45,7 @@ const shortcuts = [
 			if (key === '?') toggle();
 			else if (dialog.open) return;
 			else if (key === 't') document.querySelector('.theme-toggle')?.click();
-			else if (/^[1-5]$/.test(key)) go(Number(key) - 1);
+			else if (/^[1-9]$/.test(key)) go(Number(key) - 1);
 			else if (key === 'j') go(Math.min(current() + 1, links().length - 1));
 			else if (key === 'k') go(Math.max(current() - 1, 0));
 			else return;

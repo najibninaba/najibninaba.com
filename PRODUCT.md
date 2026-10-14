@@ -26,7 +26,9 @@ Static Astro site on GitHub Pages at najibninaba.com. Content is hand-curated in
   - **Orchard** (kapitan-ai/orchard, public, Apache-2.0, pre-release pilot): created by Najib.
   - **Cuaca** (live PWA at https://cuaca.bijan.app, confirmed by Najib on 2026-09-29): may be linked. The repository stays private and unlinked.
   - **RepoPrompt CE** (repoprompt/repoprompt-ce, public): Najib is a contributor and reviewer, not the author. Always frame it that way.
-- No Talks section yet.
+- Talks (newest first) link to their decks on talks.bijan.app, plus the PDF, recording and event page when they exist. The first is "Agentic engineering at AI Singapore" at Lorong AI, 14 Oct 2026.
+  - Don't name or describe sponsor projects covered by NDA, internal access lists or personal spend.
+  - Don't link the private talks source repository.
 - Don't publish headcount, team counts or hardware figures (10-person org, 7+ teams, 32×H100, 500TB+). The user decided on 2026-09-29 to drop them.
 - Don't link private repos (orchard-demo, orchard-workbench, homebrew-orchard, cuaca) or mention Cuaca's unreleased features.
 - Umami analytics stays in the `<head>` of `Layout.astro`.
