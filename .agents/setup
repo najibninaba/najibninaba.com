@@ -25,7 +25,7 @@ if [[ "$current_node_major" != "$node_major" ]]; then
 	hash -r
 fi
 
-pnpm_version="10.17.1"
+pnpm_version="$(node -p 'const spec = require("./package.json").packageManager; const match = /^pnpm@(\d+\.\d+\.\d+)(?:\+.*)?$/.exec(spec || ""); if (!match) throw new Error("package.json must pin an exact pnpm version"); match[1]')"
 current_pnpm_version="$(pnpm --version 2>/dev/null || true)"
 
 if [[ "$current_pnpm_version" != "$pnpm_version" ]]; then
