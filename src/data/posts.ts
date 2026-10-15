@@ -20,6 +20,14 @@ export const posts: Post[] = [
   // --- LinkedIn ---
   {
     platform: 'linkedin',
+    date: '2026-10-15',
+    title: 'Lorong AI Talk: Running Coding Agents Like HPC Jobs',
+    hook: 'Yesterday I gave my first formal talk on agentic engineering, at Lorong AI\'s "The One About AI x SWE".',
+    url: 'https://www.linkedin.com/feed/update/urn:li:activity:7516309814323372033/',
+    tags: ['agentic-engineering', 'coding-agents', 'talks'],
+  },
+  {
+    platform: 'linkedin',
     date: '2026-03-04',
     title: 'Agent-Ready Platforms Break on Docs First',
     hook: 'I tried making our platform agent-ready. The first thing that broke was the docs.',
@@ -60,6 +68,15 @@ export const posts: Post[] = [
     tags: ['coding-agents', 'methodology', 'ai-engineering'],
   },
   // --- X ---
+  {
+    platform: 'x',
+    date: '2026-10-15',
+    title: 'Slides From My Lorong AI Talk',
+    hook: 'Slides from my talk at @Lorong_AI yesterday are up.',
+    url: 'https://x.com/najibninaba/status/2110540201093148701',
+    tags: ['agentic-engineering', 'talks'],
+    type: 'post',
+  },
   {
     platform: 'x',
     date: '2026-02-19',
