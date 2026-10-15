@@ -12,6 +12,7 @@ import { posts } from '../data/posts';
 import { talks } from '../data/talks';
 const sections = [ ['about', 'About'], ['projects', 'Projects'], ['talks', 'Talks'], ['writing', 'Writing'], ['experience', 'Experience'], ['bio', 'Bio'] ];
 const latestPosts = [...posts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 5);
+const outbound = (section: string, label: string, url?: string) => ({ 'data-umami-event': 'outbound-link', 'data-umami-event-section': section, 'data-umami-event-label': label, 'data-umami-event-url': url });
 const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
 ---
 <Layout>
@@ -33,13 +34,13 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 				<h2 id="projects-heading">Projects</h2>
 				<ul class="projects">
 					{projects.map(project => <li>
-						<div class="project-heading"><h3>{project.url ? <a href={project.url}>{project.name}</a> : project.name}</h3><span>{project.role} · {project.status}{project.license && ` · ${project.license}`}</span></div>
+						<div class="project-heading"><h3>{project.url ? <a href={project.url} {...outbound('projects', project.name, project.url)}>{project.name}</a> : project.name}</h3><span>{project.role} · {project.status}{project.license && ` · ${project.license}`}</span></div>
 						<figure>
 							<div class="preview"><Image src={project.thumbnail} alt={project.screenshotAlt} width={576} height={360} widths={[112, 192, 224, 336, 384, 576]} sizes="(max-width: 647px) 112px, (min-width: 768px) and (max-width: 879px) 112px, 192px" format="webp" fit="cover" position="top" loading="lazy" /></div>
-							{(project.caption || project.captionLink) && <figcaption>{project.caption}{project.captionLink && <a href={project.captionUrl}>{project.captionLink}</a>}</figcaption>}
+							{(project.caption || project.captionLink) && <figcaption>{project.caption}{project.captionLink && <a href={project.captionUrl} {...outbound('projects', project.captionLink, project.captionUrl)}>{project.captionLink}</a>}</figcaption>}
 						</figure>
 						<p class="project-description">{project.description} {project.url && project.details[0]}</p>
-						{project.url && <p class="project-link"><a href={project.url}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a></p>}
+						{project.url && <p class="project-link"><a href={project.url} {...outbound('projects', project.name, project.url)}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a></p>}
 					</li>)}
 				</ul>
 			</section>
@@ -47,23 +48,23 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 				<h2 id="talks-heading">Talks</h2>
 				<ul class="projects">
 					{talks.map(talk => <li>
-						<div class="project-heading"><h3><a href={talk.url}>{talk.title}</a></h3><span>{talk.event}{talk.location && `, ${talk.location}`} · <time class="mono" datetime={talk.date}>{date(talk.date)}</time></span></div>
+						<div class="project-heading"><h3><a href={talk.url} {...outbound('talks', talk.title, talk.url)}>{talk.title}</a></h3><span>{talk.event}{talk.location && `, ${talk.location}`} · <time class="mono" datetime={talk.date}>{date(talk.date)}</time></span></div>
 						<figure><div class="preview"><Image src={talk.thumbnail} alt={talk.thumbnailAlt} width={576} height={360} widths={[112, 192, 224, 336, 384, 576]} sizes="(max-width: 647px) 112px, (min-width: 768px) and (max-width: 879px) 112px, 192px" format="webp" fit="cover" loading="lazy" /></div></figure>
 						<p class="project-description">{talk.description}</p>
-						<p class="project-link talk-links"><a href={talk.url}><span>Slides</span><ArrowUpRight /></a>{talk.pdfUrl && <a href={talk.pdfUrl}><span>PDF</span><ArrowUpRight /></a>}{talk.recordingUrl && <a href={talk.recordingUrl}><span>Recording</span><ArrowUpRight /></a>}{talk.eventUrl && <a href={talk.eventUrl}><span>Event</span><ArrowUpRight /></a>}</p>
+						<p class="project-link talk-links"><a href={talk.url} {...outbound('talks', 'Slides', talk.url)}><span>Slides</span><ArrowUpRight /></a>{talk.pdfUrl && <a href={talk.pdfUrl} {...outbound('talks', 'PDF', talk.pdfUrl)}><span>PDF</span><ArrowUpRight /></a>}{talk.recordingUrl && <a href={talk.recordingUrl} {...outbound('talks', 'Recording', talk.recordingUrl)}><span>Recording</span><ArrowUpRight /></a>}{talk.eventUrl && <a href={talk.eventUrl} {...outbound('talks', 'Event', talk.eventUrl)}><span>Event</span><ArrowUpRight /></a>}</p>
 					</li>)}
 				</ul>
 			</section>
 			<section id="writing" aria-labelledby="writing-heading">
 				<h2 id="writing-heading">Writing</h2>
-				<ul class="writing">{latestPosts.map(post => <li><a href={post.url}><time class="mono" datetime={post.date}>{date(post.date)}</time><span>{post.title}</span></a></li>)}</ul>
+				<ul class="writing">{latestPosts.map(post => <li><a href={post.url} {...outbound('writing', post.title, post.url)}><time class="mono" datetime={post.date}>{date(post.date)}</time><span>{post.title}</span></a></li>)}</ul>
 			</section>
 			<section id="experience" aria-labelledby="experience-heading">
 				<h2 id="experience-heading">Experience</h2>
 				<ol class="experience">{site.experiences.map(item => <li><span class="mono period">{item.period}</span><div><p>{item.title}{item.org && <span class="org"> · {item.org}</span>}</p><p class="summary">{item.summary}</p></div></li>)}</ol>
 			</section>
 			<section id="bio" aria-labelledby="bio-heading"><h2 id="bio-heading">Bio</h2><Bio /></section>
-			<footer><div class="footer-meta"><span>Singapore</span><Shortcuts sections={sections.map(([, label]) => label)} /></div><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href}><span>{link.label}</span><ArrowUpRight /></a>)}</nav></footer>
+			<footer><div class="footer-meta"><span>Singapore</span><Shortcuts sections={sections.map(([, label]) => label)} /></div><nav aria-label="Elsewhere">{socialLinks.map(link => <a href={link.href} {...outbound('footer', link.label, link.href)}><span>{link.label}</span><ArrowUpRight /></a>)}</nav></footer>
 		</main>
 	</div>
 	<script is:inline>
