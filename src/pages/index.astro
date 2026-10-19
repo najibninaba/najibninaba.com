@@ -40,7 +40,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 							{(project.caption || project.captionLink) && <figcaption>{project.caption}{project.captionLink && <a href={project.captionUrl} {...outbound('projects', project.captionLink, project.captionUrl)}>{project.captionLink}</a>}</figcaption>}
 						</figure>
 						<p class="project-description">{project.description} {project.url && project.details[0]}</p>
-						{project.url && <p class="project-link"><a href={project.url} {...outbound('projects', project.name, project.url)}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a></p>}
+						{project.url && <p class:list={['project-link', { 'link-row': project.repoUrl }]}><a href={project.url} {...outbound('projects', project.name, project.url)}><span>{project.url.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a>{project.repoUrl && <a href={project.repoUrl} {...outbound('projects', project.name, project.repoUrl)}><span>{project.repoUrl.replace(/^https:\/\/(github\.com\/)?/, '')}</span><ArrowUpRight /></a>}</p>}
 					</li>)}
 				</ul>
 			</section>
@@ -51,7 +51,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 						<div class="project-heading"><h3><a href={talk.url} {...outbound('talks', talk.title, talk.url)}>{talk.title}</a></h3><span>{talk.event}{talk.location && `, ${talk.location}`} · <time class="mono" datetime={talk.date}>{date(talk.date)}</time></span></div>
 						<figure><div class="preview"><Image src={talk.thumbnail} alt={talk.thumbnailAlt} width={576} height={360} widths={[112, 192, 224, 336, 384, 576]} sizes="(max-width: 647px) 112px, (min-width: 768px) and (max-width: 879px) 112px, 192px" format="webp" fit="cover" loading="lazy" /></div></figure>
 						<p class="project-description">{talk.description}</p>
-						<p class="project-link talk-links"><a href={talk.url} {...outbound('talks', 'Slides', talk.url)}><span>Slides</span><ArrowUpRight /></a>{talk.pdfUrl && <a href={talk.pdfUrl} {...outbound('talks', 'PDF', talk.pdfUrl)}><span>PDF</span><ArrowUpRight /></a>}{talk.recordingUrl && <a href={talk.recordingUrl} {...outbound('talks', 'Recording', talk.recordingUrl)}><span>Recording</span><ArrowUpRight /></a>}{talk.eventUrl && <a href={talk.eventUrl} {...outbound('talks', 'Event', talk.eventUrl)}><span>Event</span><ArrowUpRight /></a>}</p>
+						<p class="project-link link-row"><a href={talk.url} {...outbound('talks', 'Slides', talk.url)}><span>Slides</span><ArrowUpRight /></a>{talk.pdfUrl && <a href={talk.pdfUrl} {...outbound('talks', 'PDF', talk.pdfUrl)}><span>PDF</span><ArrowUpRight /></a>}{talk.recordingUrl && <a href={talk.recordingUrl} {...outbound('talks', 'Recording', talk.recordingUrl)}><span>Recording</span><ArrowUpRight /></a>}{talk.eventUrl && <a href={talk.eventUrl} {...outbound('talks', 'Event', talk.eventUrl)}><span>Event</span><ArrowUpRight /></a>}</p>
 					</li>)}
 				</ul>
 			</section>
@@ -127,7 +127,7 @@ const date = (value: string) => new Date(`${value}T00:00:00Z`).toLocaleDateStrin
 	.project-description { grid-column: 1; grid-row: 2; margin-top: 8px; max-width: 60ch; color: var(--ink-2); font-size: 15.5px; line-height: 1.65; }
 	.project-link { grid-column: 1; grid-row: 3; margin-top: 12px; color: var(--ink-2); font-size: 13px; }
 	.project-link a { text-decoration-line: none; }
-	.talk-links { display: flex; flex-wrap: wrap; column-gap: 16px; }
+	.link-row { display: flex; flex-wrap: wrap; column-gap: 16px; }
 	.project-link a > span, footer a > span { text-decoration-line: underline; text-decoration-color: inherit; text-decoration-thickness: inherit; text-underline-offset: var(--underline-offset); }
 	.writing li + li, .experience li + li { border-top: 1px solid var(--rule); }
 	.writing a, .experience li { display: grid; grid-template-columns: 104px minmax(0, 1fr); column-gap: 16px; padding: 10px 0; font-size: 15.5px; }

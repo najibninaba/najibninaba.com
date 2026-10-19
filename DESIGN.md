@@ -258,10 +258,11 @@ A quiet table of contents that follows the reader.
   Below a 600px Projects-list width, it becomes 112px wide beside the heading, with an 8px radius.
   Dark-mode brightness returns to full on hover or focus, without a scale transform.
 - **Caption:** optional, single-line Pencil text, 13px and 8px below the desktop image or 11px and 6px below the small image.
-  Cuaca has a plain capture date; RepoPrompt links its copyright credit.
+  Cuaca and ParkWhere have a plain capture date; RepoPrompt links its copyright credit.
 - **Heading row:** the project name in Title style (linked without an underline), with the role, status and licence beneath it in 13px Pencil.
   The heading starts at the reading column's left edge, with its cap height aligned to the thumbnail top.
 - **Body:** a 15.5px Graphite description, then the bare URL in the outbound link style.
+  A live app with a public repository adds the repository path as a second link, 16px apart, as ParkWhere does.
 
 ### Talk Entry
 Talks reuse the Project Entry layout, newest first, in a section between Projects and Writing.
@@ -329,6 +330,8 @@ All generated responsive WebP derivatives inherit their source's attribution. Pr
 | `src/assets/projects/playground-inference-thumb.webp` | Cropped 640×400 at +800+340 from the Orchard original to show the completed transcript and request bar; WebP quality 86. | Inherits the Orchard source attribution. |
 | `src/assets/projects/now-1440.png` | Capture of https://cuaca.bijan.app/ on 2026-09-29, Now view, 1440×900 CSS px at 2× DPR, retained as the original. | Cuaca, created by Najib Ninaba. |
 | `src/assets/projects/now-1440-thumb.webp` | Cropped 2200×1375 at +150+200 from the Cuaca original to keep the Pasir Ris air-quality headline and PSI reading; WebP quality 86. | Cuaca, created by Najib Ninaba. Visible plain caption: "Captured 29 Sep 2026". |
+| `src/assets/projects/parkwhere-bugis-1440.webp` | Capture of https://parkwhere.bijan.app/ on 2026-10-19, results near Bugis Junction, 1440×900 CSS px at 2× DPR with Playwright and Google Chrome, marked as check traffic so it is not counted in ParkWhere's usage. Stored as lossless WebP and retained as the original. | ParkWhere, created by Najib Ninaba. Map tiles © OneMap contributors and the Singapore Land Authority, credited in the bottom-right corner of the capture. |
+| `src/assets/projects/parkwhere-bugis-1440-thumb.webp` | The full 2880×1800 ParkWhere original, already 16:10, kept uncropped so the header, results panel, numbered carpark pins and the OneMap map credit all stay in view; resized to 1280×800, WebP quality 86. | ParkWhere, created by Najib Ninaba. Visible plain caption: "Captured 19 Oct 2026". |
 | `src/assets/projects/repoprompt-agent-new-session.webp` | Downloaded from https://repoprompt.com/images/agent-new-session.webp on 2026-09-29 (source 2584×1794) and retained as the original. | © Repo Prompt, used with attribution. |
 | `src/assets/projects/repoprompt-agent-new-session-thumb.webp` | Cropped 1920×1200 at +90+45 from the RepoPrompt original to show the agent window without wallpaper; WebP quality 86. | © Repo Prompt, used with attribution. Visible linked caption: "© Repo Prompt" at https://repoprompt.com. |
 | `src/assets/talks/2026-10-14-lorong-ai-thumb.webp` | Title slide of https://talks.bijan.app/2026-10-14-lorong-ai/, rendered in headless Chrome at 1600×1000 and 2× DPR on 2026-10-14. Cropped 2304×1440 at +144+328 to drop the letterbox bars, resized to 1280×800, WebP quality 86. | © 2026 Najib Ninaba, from his own deck. |
