@@ -5,6 +5,9 @@ import orchardThumbnail from '../assets/projects/playground-inference-thumb.webp
 // https://cuaca.bijan.app/ — Now view captured 2026-09-29, 1440×900 at 2× DPR.
 import cuacaScreenshot from '../assets/projects/now-1440.png';
 import cuacaThumbnail from '../assets/projects/now-1440-thumb.webp';
+// https://parkwhere.bijan.app/ results near Bugis Junction, captured 2026-10-19, 1440×900 at 2× DPR.
+import parkwhereScreenshot from '../assets/projects/parkwhere-bugis-1440.webp';
+import parkwhereThumbnail from '../assets/projects/parkwhere-bugis-1440-thumb.webp';
 // https://repoprompt.com/images/agent-new-session.webp — downloaded 2026-09-29.
 // © Repo Prompt, used with attribution
 import repopromptScreenshot from '../assets/projects/repoprompt-agent-new-session.webp';
@@ -25,6 +28,7 @@ export type Project = {
   status?: string;
   license?: string;
   url?: string;
+  repoUrl?: string;
   siteUrl?: string;
   demoUrl?: string;
 };
@@ -63,6 +67,24 @@ export const projects: Project[] = [
       'Uses an edge-cached last-known-good snapshot through upstream outages. Built with React 19, Vite, Effect, Cloudflare Workers and D1 as an installable PWA.',
     ],
     status: 'Live · PWA',
+  },
+  {
+    name: 'ParkWhere',
+    role: 'Creator',
+    screenshot: parkwhereScreenshot,
+    thumbnail: parkwhereThumbnail,
+    screenshotAlt: 'ParkWhere results near Bugis Junction: numbered carparks on a map, coloured by available car lots, beside the list of nearby carparks',
+    caption: 'Captured 19 Oct 2026',
+    url: 'https://parkwhere.bijan.app',
+    repoUrl: 'https://github.com/najibninaba/parkwhere',
+    description:
+      'A Singapore parking finder that shows carparks near where you are going, their available car lots and estimated parking costs.',
+    details: [
+      'Combines live HDB and LTA car lot counts with public carparks mapped on OpenStreetMap, and estimates HDB charges from the published rates.',
+      'Says "No estimate" and why when the rules do not cover a stay. Built with React 19, Effect, Cloudflare Workers and D1 as an installable PWA; every pull request gets a preview with captured proof, and production deploys only after staging passes.',
+    ],
+    status: 'Live · PWA',
+    license: 'MIT',
   },
   {
     name: 'RepoPrompt CE',
