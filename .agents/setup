@@ -34,3 +34,6 @@ if [[ "$current_pnpm_version" != "$pnpm_version" ]]; then
 fi
 
 step "Install dependencies" env CI=true pnpm install --frozen-lockfile
+
+# The diagram-design skill reads the profile named in .diagram-design from ~/.diagram-design/profiles/.
+step "Install diagram-design profile" install -D -m 644 .agents/diagram-design/najibninaba.md "$HOME/.diagram-design/profiles/najibninaba.md"
